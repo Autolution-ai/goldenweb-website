@@ -1,0 +1,160 @@
+/* ═══════════════════════════════════════════════════════
+   ANIMATIONS – GoldenWeb
+   ═══════════════════════════════════════════════════════ */
+
+/* ═══ Fade Up (Scroll Trigger) ═══ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.6s var(--ease-expo-out),
+    transform 0.6s var(--ease-expo-out);
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══ Fade In ═══ */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-out);
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+}
+
+/* ═══ Scale Up ═══ */
+.scale-up {
+  opacity: 0;
+  transform: scale(0.94);
+  transition:
+    opacity 0.5s var(--ease-expo-out),
+    transform 0.5s var(--ease-spring);
+}
+
+.scale-up.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ═══ Stagger Delays ═══ */
+.stagger-1  { transition-delay: calc(1  * var(--duration-stagger)); }
+.stagger-2  { transition-delay: calc(2  * var(--duration-stagger)); }
+.stagger-3  { transition-delay: calc(3  * var(--duration-stagger)); }
+.stagger-4  { transition-delay: calc(4  * var(--duration-stagger)); }
+.stagger-5  { transition-delay: calc(5  * var(--duration-stagger)); }
+.stagger-6  { transition-delay: calc(6  * var(--duration-stagger)); }
+.stagger-7  { transition-delay: calc(7  * var(--duration-stagger)); }
+.stagger-8  { transition-delay: calc(8  * var(--duration-stagger)); }
+
+/* ═══ Marquee ═══ */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ═══ Hero Grid Drift ═══ */
+@keyframes grid-drift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(60px); }
+}
+
+/* ═══ Hero Glow Pulse ═══ */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.04); }
+}
+
+.hero-glow-pulse {
+  animation: glow-pulse 6s var(--ease-default) infinite;
+}
+
+/* ═══ Gold Line Draw (SVG) ═══ */
+@keyframes line-draw {
+  from { stroke-dashoffset: var(--line-length, 200); }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* ═══ CTA Button Pulse ═══ */
+@keyframes cta-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(200,169,110,0.35),
+                0 4px 15px rgba(200,169,110,0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(200,169,110,0),
+                0 4px 20px rgba(200,169,110,0.35);
+  }
+}
+
+.btn--cta-pulse {
+  animation: cta-pulse 3s ease-in-out infinite;
+}
+
+/* ═══ Stat Counter Flash ═══ */
+@keyframes stat-flash {
+  0%   { color: var(--color-gold-light); }
+  100% { color: var(--color-gold); }
+}
+
+/* ═══ Flowchart Node Appear ═══ */
+@keyframes node-appear {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ═══ Process Step Activate ═══ */
+@keyframes step-activate {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* ═══ Gradient Shimmer (auf Karten) ═══ */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ═══ Reduce Motion ═══ */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .fade-in,
+  .scale-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+
+  .hero-glow-pulse,
+  .btn--cta-pulse,
+  .btn--pulse {
+    animation: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
