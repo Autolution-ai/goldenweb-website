@@ -2,10 +2,9 @@
    SECTIONS – GoldenWeb  (Mobile-First)
    ═══════════════════════════════════════════════════════ */
 
-/* ── Container-Fix: breitere Nutzung auf Desktop ── */
-:root {
-  --container-max: 1280px;
-  --container-pad: clamp(var(--space-5), 6vw, var(--space-20));
+/* ── Global overflow lock – prevents any element from causing horizontal scroll ── */
+html, body {
+  max-width: 100%;
 }
 
 /* ════════════════════════════════════════
@@ -161,6 +160,7 @@
   overflow: hidden;
   padding-top: 100px;
   padding-bottom: var(--space-16);
+  width: 100%;
 }
 
 /* Hintergrund-Glow */
@@ -189,6 +189,7 @@
   position: relative;
   z-index: 1;
   text-align: center;
+  width: 100%;
   max-width: 860px;
   padding-inline: var(--container-pad);
 }
@@ -238,16 +239,34 @@
 
 .hero__ctas {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--space-4);
-  justify-content: center;
+  align-items: center;
   margin-bottom: var(--space-8);
+  width: 100%;
+}
+
+.hero__ctas .btn {
+  width: 100%;
+  max-width: 360px;
+  justify-content: center;
+}
+
+@media (min-width: 560px) {
+  .hero__ctas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero__ctas .btn {
+    width: auto;
+  }
 }
 
 .hero__trust {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-5) var(--space-8);
+  gap: var(--space-3) var(--space-6);
   justify-content: center;
 }
 
