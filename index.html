@@ -4,22 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
   <title>GoldenWeb – Websites die Aufträge bringen. Automatisch.</title>
   <meta name="description" content="GoldenWeb baut Websites für Handwerker und lokale Dienstleister, die 24/7 neue Anfragen bringen. Mit KI, Speed-to-Lead und CRM. Fertig in 30 Tagen.">
   <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
   <meta property="og:title" content="GoldenWeb – Websites die Aufträge bringen. Automatisch.">
   <meta property="og:description" content="Wir bauen ein System aus Website, KI und Automatisierung – das planbar neue Anfragen bringt. Für Handwerker und lokale Dienstleister.">
   <meta property="og:type" content="website">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/design-system.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/animations.css">
@@ -28,7 +23,7 @@
 <body>
 
   <!-- ══════════════════════════════════════
-       1. NAVIGATION
+       NAVIGATION
        ══════════════════════════════════════ -->
   <nav class="nav" id="nav" aria-label="Hauptnavigation">
     <div class="nav__container">
@@ -36,12 +31,14 @@
 
       <ul class="nav__links" role="list">
         <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#referenzen">Referenzen</a></li>
-        <li><a href="#prozess">Ablauf</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
 
-      <a href="#kontakt" class="btn btn--primary btn--sm nav__cta">Kostenloses Erstgespräch</a>
+      <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--sm nav__cta">
+        Erstgespräch buchen
+      </a>
 
       <button class="nav__hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
         <span></span>
@@ -51,21 +48,20 @@
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
   <div class="nav__mobile" id="navMobile" aria-hidden="true">
-    <nav aria-label="Mobile Navigation">
-      <a href="#leistungen" class="nav__mobile-link">Leistungen</a>
-      <a href="#referenzen" class="nav__mobile-link">Referenzen</a>
-      <a href="#prozess" class="nav__mobile-link">Ablauf</a>
-      <a href="#faq" class="nav__mobile-link">FAQ</a>
-      <a href="#kontakt" class="btn btn--primary btn--lg" style="margin-top: 1rem;">Kostenloses Erstgespräch</a>
-    </nav>
+    <a href="#leistungen" class="nav__mobile-link">Leistungen</a>
+    <a href="#ueber-uns" class="nav__mobile-link">Über uns</a>
+    <a href="#referenzen" class="nav__mobile-link">Referenzen</a>
+    <a href="#faq" class="nav__mobile-link">FAQ</a>
+    <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--lg" style="margin-top:1.5rem;">
+      Erstgespräch buchen
+    </a>
   </div>
 
   <main>
 
     <!-- ══════════════════════════════════════
-         2. HERO
+         HERO
          ══════════════════════════════════════ -->
     <section class="hero" id="hero" aria-label="Hero">
       <div class="hero__glow hero-glow-pulse" aria-hidden="true"></div>
@@ -74,7 +70,7 @@
       <div class="hero__content">
         <div class="hero__kicker fade-up">
           <span class="hero__kicker-dot" aria-hidden="true"></span>
-          Für Handwerker &amp; lokale Dienstleister
+          Für Handwerker und lokale Dienstleister
         </div>
 
         <h1 class="hero__headline fade-up stagger-1">
@@ -83,15 +79,15 @@
         </h1>
 
         <p class="hero__sub fade-up stagger-2">
-          Wir bauen ein System aus Website, KI und Automatisierung – das planbar neue Anfragen bringt. Für Handwerker und lokale Dienstleister. Deutschlandweit.
+          Wir bauen Websites für Handwerker und lokale Dienstleister, die planbar neue Anfragen bringen. Fertig in 30 Tagen. Deutschlandweit.
         </p>
 
         <div class="hero__ctas fade-up stagger-3">
-          <a href="#kontakt" class="btn btn--primary btn--lg btn--cta-pulse">
+          <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--cta-pulse">
             Kostenloses Erstgespräch buchen
           </a>
-          <a href="#referenzen" class="btn btn--ghost btn--lg">
-            Referenzen ansehen
+          <a href="#leistungen" class="btn btn--ghost btn--lg">
+            Leistungen ansehen
           </a>
         </div>
 
@@ -103,45 +99,42 @@
       </div>
 
       <!-- Marquee -->
-      <div class="marquee" aria-label="Branchen" aria-hidden="true">
+      <div class="marquee" aria-hidden="true">
         <div class="marquee__inner">
-          <div class="marquee-track" id="marqueeTrack1">
-            <span class="marquee__chip">🔧 Elektriker</span>
-            <span class="marquee__chip">🏠 Dachdecker</span>
-            <span class="marquee__chip">🪚 Schreiner</span>
-            <span class="marquee__chip">🚿 Sanitär</span>
-            <span class="marquee__chip">🏢 Immobilien</span>
-            <span class="marquee__chip">💆 Physiotherapeut</span>
-            <span class="marquee__chip">⚖️ Rechtsanwalt</span>
-            <span class="marquee__chip">📊 Steuerberater</span>
-            <span class="marquee__chip">🚗 KFZ-Betrieb</span>
-            <span class="marquee__chip">🖌️ Maler</span>
-            <span class="marquee__chip">🌿 Gartenbau</span>
-            <span class="marquee__chip">🚦 Fahrschule</span>
-            <span class="marquee__chip">🔧 Elektriker</span>
-            <span class="marquee__chip">🏠 Dachdecker</span>
-            <span class="marquee__chip">🪚 Schreiner</span>
-            <span class="marquee__chip">🚿 Sanitär</span>
-            <span class="marquee__chip">🏢 Immobilien</span>
-            <span class="marquee__chip">💆 Physiotherapeut</span>
-            <span class="marquee__chip">⚖️ Rechtsanwalt</span>
-            <span class="marquee__chip">📊 Steuerberater</span>
-            <span class="marquee__chip">🚗 KFZ-Betrieb</span>
-            <span class="marquee__chip">🖌️ Maler</span>
-            <span class="marquee__chip">🌿 Gartenbau</span>
-            <span class="marquee__chip">🚦 Fahrschule</span>
-          </div>
+          <span class="marquee__chip">Elektriker</span>
+          <span class="marquee__chip">Dachdecker</span>
+          <span class="marquee__chip">Schreiner</span>
+          <span class="marquee__chip">Sanitär</span>
+          <span class="marquee__chip">Immobilien</span>
+          <span class="marquee__chip">Physiotherapeut</span>
+          <span class="marquee__chip">Rechtsanwalt</span>
+          <span class="marquee__chip">Steuerberater</span>
+          <span class="marquee__chip">KFZ-Betrieb</span>
+          <span class="marquee__chip">Maler</span>
+          <span class="marquee__chip">Gartenbau</span>
+          <span class="marquee__chip">Fahrschule</span>
+          <span class="marquee__chip">Elektriker</span>
+          <span class="marquee__chip">Dachdecker</span>
+          <span class="marquee__chip">Schreiner</span>
+          <span class="marquee__chip">Sanitär</span>
+          <span class="marquee__chip">Immobilien</span>
+          <span class="marquee__chip">Physiotherapeut</span>
+          <span class="marquee__chip">Rechtsanwalt</span>
+          <span class="marquee__chip">Steuerberater</span>
+          <span class="marquee__chip">KFZ-Betrieb</span>
+          <span class="marquee__chip">Maler</span>
+          <span class="marquee__chip">Gartenbau</span>
+          <span class="marquee__chip">Fahrschule</span>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         3. SOCIAL PROOF / ZAHLEN
+         ZAHLEN
          ══════════════════════════════════════ -->
     <section class="section-zahlen section" id="zahlen" aria-label="Zahlen und Fakten">
       <div class="container">
         <p class="eyebrow" style="text-align:center; margin-bottom: var(--space-10);">Bereits vertrauen uns</p>
-
         <div class="stats-grid">
           <div class="stat-card fade-up">
             <div class="stat-number" data-target="340" data-suffix="%">0%</div>
@@ -152,7 +145,7 @@
             <div class="stat-label">Bis zur<br>fertigen Website</div>
           </div>
           <div class="stat-card fade-up stagger-2">
-            <div class="stat-number" data-target="50" data-prefix="+" data-suffix="+">0</div>
+            <div class="stat-number" data-target="50" data-prefix="+" data-suffix="">0</div>
             <div class="stat-label">Betriebe<br>erfolgreich umgesetzt</div>
           </div>
           <div class="stat-card fade-up stagger-3">
@@ -161,28 +154,24 @@
           </div>
         </div>
 
-        <!-- Logo-Reihe -->
         <div class="logo-row fade-up">
           <div class="logo-badge logo-badge--active">
             <span class="logo-badge__dot"></span>
-            <span><strong>Belitz</strong> Unternehmensgruppe – Aktuell in Umsetzung</span>
+            <span><strong>Belitz</strong> Unternehmensgruppe – aktuell in Umsetzung</span>
           </div>
           <div class="logo-badge">
-            <span style="color: var(--color-text-tertiary); font-size: var(--text-xs);">+ Dein Unternehmen?</span>
-          </div>
-          <div class="logo-badge">
-            <span style="color: var(--color-text-tertiary); font-size: var(--text-xs);">+ Dein Unternehmen?</span>
+            <span style="color: var(--color-text-tertiary); font-size: var(--text-xs);">Dein Unternehmen?</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         4. DAS PROBLEM
+         PROBLEM
          ══════════════════════════════════════ -->
     <section class="section-problem section" id="problem" aria-label="Das Problem">
       <div class="container">
-        <p class="eyebrow fade-up">Das Problem</p>
+        <span class="eyebrow fade-up">Das Problem</span>
         <div class="problem__content">
           <span class="problem__line fade-up stagger-1">Deine Konkurrenz ist schon online.<br>Du noch nicht.</span>
 
@@ -193,7 +182,7 @@
 
           <div class="problem__spacer"></div>
 
-          <span class="problem__line fade-up stagger-1">Aber wenn jemand googelt —<br>findet er dich nicht.</span>
+          <span class="problem__line fade-up stagger-1">Aber wenn jemand googelt<br>findet er dich nicht.</span>
 
           <div class="problem__spacer"></div>
 
@@ -203,379 +192,244 @@
 
           <div class="problem__spacer"></div>
 
-          <span class="problem__line problem__line--accent fade-up stagger-1">Das muss nicht so bleiben.</span>
+          <span class="problem__line problem__line--accent fade-up stagger-1">Am Ende gewinnt nicht der Beste.<br>Sondern der Sichtbarste.</span>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         5. DAS SYSTEM / FLOWCHART
+         LEISTUNGEN / SERVICES
          ══════════════════════════════════════ -->
-    <section class="section-system section" id="leistungen" aria-label="Das System">
+    <section class="section-services section" id="leistungen" aria-label="Leistungen">
       <div class="container">
         <div class="section-header fade-up">
-          <span class="eyebrow">Wie das System funktioniert</span>
-          <h2>Wir bauen keine Website.<br>Wir bauen ein System.</h2>
-          <p>Website + KI-Chatbot + Speed-to-Lead + CRM. Kein Lead geht verloren. Automatisch.</p>
+          <span class="eyebrow">Was wir bauen</span>
+          <h2>Deine Website als<br>Anfragen-Maschine.</h2>
+          <p>Wir bauen keine Visitenkarte. Wir bauen ein digitales System, das planbar neue Kunden bringt.</p>
         </div>
 
-        <div class="flowchart" id="flowchart">
-
-          <!-- Node 1 -->
-          <div class="flowchart__node" data-index="0">
-            <span class="flowchart__node-number">01</span>
-            <div class="flowchart__node-icon" aria-hidden="true">🌐</div>
-            <h3 class="flowchart__node-title">Website</h3>
-            <p class="flowchart__node-desc">Conversion-optimiert, mobilfreundlich, auf deine Branche zugeschnitten.</p>
-            <div class="flowchart__tooltip" role="tooltip">
-              Schnell, sauber, SEO-optimiert. Lädt in unter 2 Sekunden.
-            </div>
-          </div>
-
-          <!-- Arrow 1 -->
-          <div class="flowchart__connector" aria-hidden="true">
-            <svg width="48" height="24" viewBox="0 0 48 24">
-              <path class="flowchart__arrow-path" d="M0 12 L36 12 M28 4 L40 12 L28 20" stroke-linejoin="round"/>
+        <!-- Kern-Service -->
+        <div class="service-hero fade-up">
+          <div class="service-hero__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
             </svg>
           </div>
-          <div class="flowchart__connector-mobile" aria-hidden="true">↓</div>
-
-          <!-- Node 2 -->
-          <div class="flowchart__node" data-index="1">
-            <span class="flowchart__node-number">02</span>
-            <div class="flowchart__node-icon" aria-hidden="true">🤖</div>
-            <h3 class="flowchart__node-title">KI-Chatbot</h3>
-            <p class="flowchart__node-desc">Antwortet sofort auf Anfragen — auch nachts, auch am Wochenende.</p>
-            <div class="flowchart__tooltip" role="tooltip">
-              24/7 verfügbar. Qualifiziert Anfragen und bucht Termine.
-            </div>
+          <div class="service-hero__content">
+            <span class="eyebrow">Die Grundlage</span>
+            <h3 class="service-hero__title">Professionelle Website</h3>
+            <p class="service-hero__desc">Conversion-optimiert, mobilfreundlich, auf deine Branche und Region zugeschnitten. In 30 Tagen live.</p>
+            <ul class="service-feature-list">
+              <li>Individuelles Design, kein Template</li>
+              <li>Lokal SEO-optimiert für deine Region</li>
+              <li>Mobiloptimiert, lädt in unter 2 Sekunden</li>
+              <li>Hosting und Domain inklusive</li>
+              <li>Einmalige Freigabe, dann live</li>
+            </ul>
           </div>
-
-          <!-- Arrow 2 -->
-          <div class="flowchart__connector" aria-hidden="true">
-            <svg width="48" height="24" viewBox="0 0 48 24">
-              <path class="flowchart__arrow-path" d="M0 12 L36 12 M28 4 L40 12 L28 20" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="flowchart__connector-mobile" aria-hidden="true">↓</div>
-
-          <!-- Node 3 -->
-          <div class="flowchart__node" data-index="2">
-            <span class="flowchart__node-number">03</span>
-            <div class="flowchart__node-icon" aria-hidden="true">⚡</div>
-            <h3 class="flowchart__node-title">Speed-to-Lead</h3>
-            <p class="flowchart__node-desc">Sofort-Rückruf automatisch — wer zuerst antwortet, gewinnt den Auftrag.</p>
-            <div class="flowchart__tooltip" role="tooltip">
-              Studien zeigen: Wer in 5 Min. antwortet, gewinnt 9× öfter.
-            </div>
-          </div>
-
-          <!-- Arrow 3 -->
-          <div class="flowchart__connector" aria-hidden="true">
-            <svg width="48" height="24" viewBox="0 0 48 24">
-              <path class="flowchart__arrow-path" d="M0 12 L36 12 M28 4 L40 12 L28 20" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="flowchart__connector-mobile" aria-hidden="true">↓</div>
-
-          <!-- Node 4 -->
-          <div class="flowchart__node" data-index="3">
-            <span class="flowchart__node-number">04</span>
-            <div class="flowchart__node-icon" aria-hidden="true">📋</div>
-            <h3 class="flowchart__node-title">CRM</h3>
-            <p class="flowchart__node-desc">Kein Lead geht verloren. Alle Anfragen zentral, organisiert, nachverfolgbar.</p>
-            <div class="flowchart__tooltip" role="tooltip">
-              Vollständig integriert mit deinen bestehenden Tools.
-            </div>
-          </div>
-
         </div>
 
-        <!-- Result -->
-        <div class="flowchart__result fade-up">
-          <p>Das Ergebnis: Du verpasst <span>keine Anfrage mehr.</span> Automatisch.</p>
+        <!-- Upgrade-Services -->
+        <div class="services-upgrades">
+          <p class="services-upgrades__label eyebrow">Optionale Erweiterungen</p>
+          <div class="services-upgrades__grid">
+
+            <div class="service-card fade-up stagger-1">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">KI-Chatbot</h3>
+              <p class="service-card__desc">Antwortet sofort auf Anfragen. Rund um die Uhr, auch am Wochenende. Kein Lead bleibt unbeantwortet.</p>
+            </div>
+
+            <div class="service-card fade-up stagger-2">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Speed-to-Lead</h3>
+              <p class="service-card__desc">Automatischer Sofort-Rückruf bei neuen Anfragen. Wer zuerst antwortet, gewinnt den Auftrag.</p>
+            </div>
+
+            <div class="service-card fade-up stagger-3">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">CRM-Integration</h3>
+              <p class="service-card__desc">Alle Anfragen zentral, organisiert und nachverfolgbar. Kein Lead geht verloren.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top: var(--space-12);" class="fade-up">
+          <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+            Kostenloses Erstgespräch buchen
+          </a>
+          <p style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: var(--space-4);">
+            15 Minuten. Kostenlos. Unverbindlich.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         6. PAKETE / PREISE
+         WER WIR SIND
          ══════════════════════════════════════ -->
-    <section class="section-pakete section" id="pakete" aria-label="Pakete und Preise">
+    <section class="section-team section" id="ueber-uns" aria-label="Über uns">
       <div class="container">
-        <div class="section-header fade-up">
-          <span class="eyebrow">Pakete & Preise</span>
-          <h2>Das richtige Paket<br>für dein Business</h2>
-        </div>
+        <div class="team-layout">
 
-        <div class="pricing-grid">
-
-          <!-- Starter -->
-          <div class="pricing-card fade-up stagger-1">
-            <div class="pricing-card__header">
-              <div class="pricing-card__name">Starter</div>
-              <div class="pricing-card__price">Ab 2.500 €</div>
-              <div class="pricing-card__price-note">einmalig, zzgl. MwSt.</div>
-            </div>
-
-            <div class="pricing-card__features">
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>5-seitige Website</span>
+          <div class="team-text fade-up">
+            <span class="eyebrow">Wer steckt dahinter</span>
+            <h2 class="team-headline">Hannes und Jonas.<br>Unternehmer wie du.</h2>
+            <p class="team-desc">
+              Wir sind keine große Agentur mit Hochglanz-Präsentationen. Wir sind zwei Unternehmer, die selbst wissen, was es bedeutet, einen Betrieb aufzubauen.
+            </p>
+            <p class="team-desc">
+              Über unsere Schwestermarke GoldenPost begleiten wir bereits 50+ lokale Betriebe dabei, online sichtbar zu werden. Mit Content, Social Media und Strategie. GoldenWeb ist der nächste Schritt: das digitale Fundament, auf dem alles aufbaut.
+            </p>
+            <div class="team-trust">
+              <div class="team-trust-item">
+                <span class="team-trust-number">50+</span>
+                <span class="team-trust-label">Betriebe begleitet</span>
               </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>SEO-Grundlage</span>
+              <div class="team-trust-item">
+                <span class="team-trust-number">7-stellig</span>
+                <span class="team-trust-label">Umsätze für Kunden</span>
               </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Mobiloptimiert</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Hosting inklusive</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>E-Mail Support</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--dash" style="color: var(--color-text-tertiary);">—</span>
-                <span style="color: var(--color-text-tertiary);">KI-Chatbot</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--dash" style="color: var(--color-text-tertiary);">—</span>
-                <span style="color: var(--color-text-tertiary);">Speed-to-Lead</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--dash" style="color: var(--color-text-tertiary);">—</span>
-                <span style="color: var(--color-text-tertiary);">CRM-Integration</span>
+              <div class="team-trust-item">
+                <span class="team-trust-number">2</span>
+                <span class="team-trust-label">Direkte Ansprechpartner</span>
               </div>
             </div>
 
-            <a href="#kontakt" class="btn btn--ghost" style="width:100%; justify-content:center;">Starter anfragen</a>
+            <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--ghost" style="margin-top: var(--space-8);">
+              Persönlich kennenlernen
+            </a>
           </div>
 
-          <!-- Growth (Featured) -->
-          <div class="pricing-card pricing-card--featured fade-up stagger-2">
-            <div class="pricing-badge-wrap">
-              <span class="badge badge--gold">⭐ Beliebteste Wahl</span>
-            </div>
-            <div class="pricing-card__header">
-              <div class="pricing-card__name">Growth</div>
-              <div class="pricing-card__price">Ab 4.500 €</div>
-              <div class="pricing-card__price-note">einmalig, zzgl. MwSt.</div>
-            </div>
-
-            <div class="pricing-card__features">
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Bis 10 Seiten</span>
+          <div class="team-photos fade-up stagger-2">
+            <div class="team-member">
+              <div class="team-member__photo">
+                <div class="team-member__placeholder" aria-label="Foto Hannes">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
               </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Lokal optimiertes SEO</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Mobiloptimiert</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Hosting inklusive</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>E-Mail + Call Support</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>KI-Chatbot</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--dash" style="color: var(--color-text-tertiary);">—</span>
-                <span style="color: var(--color-text-tertiary);">Speed-to-Lead</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--dash" style="color: var(--color-text-tertiary);">—</span>
-                <span style="color: var(--color-text-tertiary);">CRM-Integration</span>
+              <div class="team-member__info">
+                <span class="team-member__name">Hannes</span>
+                <span class="team-member__role">Technik & Umsetzung</span>
               </div>
             </div>
 
-            <a href="#kontakt" class="btn btn--primary" style="width:100%; justify-content:center;">Growth anfragen</a>
-          </div>
-
-          <!-- System -->
-          <div class="pricing-card fade-up stagger-3">
-            <div class="pricing-card__header">
-              <div class="pricing-card__name">System</div>
-              <div class="pricing-card__price">Ab 6.000 €</div>
-              <div class="pricing-card__price-note">+ Retainer, zzgl. MwSt.</div>
-            </div>
-
-            <div class="pricing-card__features">
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Unbegrenzte Seiten</span>
+            <div class="team-member">
+              <div class="team-member__photo">
+                <div class="team-member__placeholder" aria-label="Foto Jonas">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
               </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Vollständiges SEO</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Mobiloptimiert</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Hosting inklusive</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Direkt-Ansprechpartner</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>KI-Chatbot</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>Speed-to-Lead</span>
-              </div>
-              <div class="pricing-card__feature">
-                <span class="pricing-card__feature-icon pricing-card__feature-icon--check">✓</span>
-                <span>CRM-Integration</span>
+              <div class="team-member__info">
+                <span class="team-member__name">Jonas</span>
+                <span class="team-member__role">Strategie & Kunden</span>
               </div>
             </div>
 
-            <a href="#kontakt" class="btn btn--ghost" style="width:100%; justify-content:center;">System anfragen</a>
+            <div class="team-sister-badge">
+              <span class="team-sister-badge__label">Schwestermarke</span>
+              <a href="https://goldenpost.media/home" target="_blank" rel="noopener" class="team-sister-badge__brand">GoldenPost</a>
+              <span class="team-sister-badge__sub">Content Marketing für KMUs</span>
+            </div>
           </div>
 
         </div>
-
-        <p class="pricing-hint fade-up">
-          Nicht sicher welches Paket? <a href="#kontakt">Kostenloses Erstgespräch →</a>
-        </p>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         7. REFERENZEN / CASE STUDIES
+         REFERENZEN
          ══════════════════════════════════════ -->
     <section class="section-referenzen section" id="referenzen" aria-label="Referenzen">
       <div class="container">
         <div class="section-header fade-up">
           <span class="eyebrow">Referenzen</span>
-          <h2>Ergebnisse, die für<br>sich sprechen.</h2>
+          <h2>Unser erstes Projekt.<br>Viele weitere folgen.</h2>
         </div>
 
-        <div class="cases-grid" id="casesGrid">
-
-          <!-- Case 1: Belitz -->
-          <article class="case-card fade-up stagger-1">
-            <div class="case-card__preview">
-              <div class="case-card__preview-placeholder">
-                <div class="case-card__preview-icon">🏗️</div>
-                <span class="case-card__preview-label">Website in Umsetzung</span>
+        <div class="referenz-single fade-up">
+          <div class="referenz-browser">
+            <div class="referenz-browser__bar">
+              <div class="referenz-browser__dots" aria-hidden="true">
+                <span></span><span></span><span></span>
               </div>
-              <span class="case-card__launch-badge">Launch: Q3 2026</span>
+              <div class="referenz-browser__url">belitz-gruppe.de</div>
             </div>
-            <div class="case-card__body">
-              <div class="case-card__meta">
-                <span class="tag">Unternehmensgruppe</span>
-                <span class="tag tag--gold">Aktuell live</span>
-              </div>
-              <h3 class="case-card__title">Belitz Unternehmensgruppe</h3>
-              <p style="font-size: var(--text-sm); color: var(--color-text-secondary);">Website + System-Integration für eine Bau- und Immobiliengruppe. Launch Q3 2026.</p>
-            </div>
-          </article>
-
-          <!-- Case 2: Demo Elektro -->
-          <article class="case-card fade-up stagger-2">
-            <div class="case-card__preview">
-              <div class="case-card__preview-placeholder">
-                <div class="case-card__preview-icon">⚡</div>
-                <span class="case-card__preview-label">Konzept-Website</span>
-              </div>
-            </div>
-            <div class="case-card__body">
-              <div class="case-card__meta">
-                <span class="tag">Elektro / Handwerk</span>
-                <span class="tag">Demo</span>
-              </div>
-              <h3 class="case-card__title">Elektrobetrieb Müller</h3>
-              <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-3);">Konzept-Website für die Elektro-Branche. 30 Tage bis Launch.</p>
-              <div class="case-card__stats">
-                <div class="case-stat">
-                  <span class="case-stat__value">+18</span>
-                  <span class="case-stat__label">Anfragen im ersten Monat</span>
+            <div class="referenz-browser__screen">
+              <div class="referenz-browser__content">
+                <div class="referenz-browser__shimmer"></div>
+                <div class="referenz-browser__lines">
+                  <div class="referenz-line referenz-line--hero"></div>
+                  <div class="referenz-line referenz-line--sub"></div>
+                  <div class="referenz-line referenz-line--btn"></div>
                 </div>
-                <div class="case-stat">
-                  <span class="case-stat__value">12</span>
-                  <span class="case-stat__label">Keywords auf Seite 1</span>
+                <div class="referenz-browser__badge">
+                  <span class="referenz-launch-badge">Launch: Q3 2026</span>
                 </div>
               </div>
             </div>
-          </article>
+          </div>
 
-          <!-- Case 3: Demo Physio -->
-          <article class="case-card fade-up stagger-3">
-            <div class="case-card__preview">
-              <div class="case-card__preview-placeholder">
-                <div class="case-card__preview-icon">💆</div>
-                <span class="case-card__preview-label">Konzept-Website</span>
-              </div>
+          <div class="referenz-info">
+            <div class="referenz-info__meta">
+              <span class="tag">Unternehmensgruppe</span>
+              <span class="tag tag--gold">Aktuell in Umsetzung</span>
             </div>
-            <div class="case-card__body">
-              <div class="case-card__meta">
-                <span class="tag">Gesundheit / Praxis</span>
-                <span class="tag">Demo</span>
-              </div>
-              <h3 class="case-card__title">Physiopraxis Sonnenschein</h3>
-              <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: var(--space-3);">Konzept-Website für Physiotherapie-Praxen. 28 Tage bis Launch.</p>
-              <div class="case-card__stats">
-                <div class="case-stat">
-                  <span class="case-stat__value">+220%</span>
-                  <span class="case-stat__label">Organischer Traffic</span>
-                </div>
-                <div class="case-stat">
-                  <span class="case-stat__value">90 Tage</span>
-                  <span class="case-stat__label">Bis zur Warteliste</span>
-                </div>
-              </div>
+            <h3 class="referenz-info__title">Belitz Unternehmensgruppe</h3>
+            <p class="referenz-info__desc">
+              Website und System-Integration für eine Bau- und Immobiliengruppe. Vollständige digitale Präsenz mit Anfragen-Automatisierung.
+            </p>
+            <div class="referenz-info__highlight">
+              <p>Dein Unternehmen könnte das nächste sein.</p>
+              <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+                Erstgespräch buchen
+              </a>
             </div>
-          </article>
-
-        </div>
-
-        <!-- Carousel Dots (mobile only) -->
-        <div class="carousel-dots" id="carouselDots" aria-hidden="true">
-          <button class="carousel-dot is-active" data-index="0"></button>
-          <button class="carousel-dot" data-index="1"></button>
-          <button class="carousel-dot" data-index="2"></button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         8. PROZESS
+         PROZESS
          ══════════════════════════════════════ -->
     <section class="section-prozess section" id="prozess" aria-label="Ablauf">
       <div class="container">
         <div class="section-header fade-up">
           <span class="eyebrow">Der Ablauf</span>
           <h2>So einfach läuft es ab.</h2>
-          <p>Dein Zeitaufwand: ca. 2–3 Stunden. Den Rest übernehmen wir.</p>
+          <p>Dein Zeitaufwand: circa 2 bis 3 Stunden. Den Rest übernehmen wir.</p>
         </div>
 
         <div class="process-steps" id="processSteps">
-
           <div class="process-step" data-step="0">
             <div class="process-step__circle">01</div>
             <div class="process-step__body">
               <div class="process-step__number">Schritt 01</div>
               <h3 class="process-step__title">Gespräch</h3>
-              <p class="process-step__desc">15 Minuten Kennenlernen. Wir schauen, ob wir passen — kein Druck, kein Pitch.</p>
+              <p class="process-step__desc">15 Minuten Kennenlernen. Wir schauen ob wir passen. Kein Druck, kein Pitch.</p>
             </div>
           </div>
 
@@ -601,11 +455,10 @@
             <div class="process-step__circle">04</div>
             <div class="process-step__body">
               <div class="process-step__number">Schritt 04</div>
-              <h3 class="process-step__title">Live &amp; Anfragen</h3>
+              <h3 class="process-step__title">Live und Anfragen</h3>
               <p class="process-step__desc">Deine Website geht live. Anfragen kommen rein. Automatisch.</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -627,21 +480,21 @@
               <span>Was kostet eine Website bei GoldenWeb?</span>
               <span class="faq-trigger__icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-body" role="region">
+            <div class="faq-body">
               <div class="faq-body__inner">
-                Unsere Websites starten ab 2.500 €. Im kostenlosen Erstgespräch bekommst du ein konkretes Angebot für dein Projekt — ohne versteckte Kosten.
+                Im kostenlosen Erstgespräch bekommst du ein konkretes Angebot für dein Projekt. Ohne versteckte Kosten, ohne Überraschungen.
               </div>
             </div>
           </div>
 
           <div class="faq-item" role="listitem">
             <button class="faq-trigger" aria-expanded="false">
-              <span>Wie lange dauert es, bis meine Website fertig ist?</span>
+              <span>Wie lange dauert es bis meine Website fertig ist?</span>
               <span class="faq-trigger__icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-body" role="region">
+            <div class="faq-body">
               <div class="faq-body__inner">
-                In der Regel 30 Tage vom ersten Gespräch bis zum Launch — vorausgesetzt du bist für Feedback erreichbar. Keine langen Wartezeiten, keine endlosen Revisionsschleifen.
+                In der Regel 30 Tage vom ersten Gespräch bis zum Launch. Vorausgesetzt du bist für Feedback erreichbar. Keine langen Wartezeiten.
               </div>
             </div>
           </div>
@@ -651,33 +504,33 @@
               <span>Wie viel Zeit muss ich selbst investieren?</span>
               <span class="faq-trigger__icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-body" role="region">
+            <div class="faq-body">
               <div class="faq-body__inner">
-                Ca. 2–3 Stunden gesamt: Erstgespräch, Feedback auf den Entwurf, Freigabe. Den Rest übernehmen wir. Du kannst in dieser Zeit einfach weiterarbeiten.
+                Circa 2 bis 3 Stunden gesamt: Erstgespräch, Feedback auf den Entwurf, Freigabe. Den Rest übernehmen wir komplett.
               </div>
             </div>
           </div>
 
           <div class="faq-item" role="listitem">
             <button class="faq-trigger" aria-expanded="false">
-              <span>Was ist der Unterschied zu einer normalen Webdesign-Agentur?</span>
+              <span>Was ist der Unterschied zu anderen Agenturen?</span>
               <span class="faq-trigger__icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-body" role="region">
+            <div class="faq-body">
               <div class="faq-body__inner">
-                Wir bauen kein Design — wir bauen ein System. Website + KI-Chatbot + automatisierte Anfragenbearbeitung. Dein Mitbewerber hat eine hübsche Website. Du hast eine, die arbeitet.
+                Wir bauen kein Design. Wir bauen ein System. Dein Mitbewerber hat eine hübsche Website. Du bekommst eine, die arbeitet. Und wir wissen aus 50+ Projekten, was lokale Betriebe wirklich brauchen.
               </div>
             </div>
           </div>
 
           <div class="faq-item" role="listitem">
             <button class="faq-trigger" aria-expanded="false">
-              <span>Ich hatte schon eine Agentur — hat nicht funktioniert. Warum soll das anders sein?</span>
+              <span>Was wenn es nicht funktioniert?</span>
               <span class="faq-trigger__icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-body" role="region">
+            <div class="faq-body">
               <div class="faq-body__inner">
-                Weil wir Ergebnisse garantieren. Wenn nach 90 Tagen keine messbaren Verbesserungen da sind, arbeiten wir kostenlos weiter. Das ist keine Marketingfloskel — das steht im Vertrag.
+                Wenn nach 90 Tagen keine messbaren Verbesserungen da sind, arbeiten wir kostenlos weiter. Das steht im Vertrag.
               </div>
             </div>
           </div>
@@ -687,9 +540,9 @@
               <span>Brauche ich technisches Vorwissen?</span>
               <span class="faq-trigger__icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-body" role="region">
+            <div class="faq-body">
               <div class="faq-body__inner">
-                Null. Wir erklären alles in normaler Sprache und du hast einen direkten Ansprechpartner nach dem Launch. Kein Technik-Kauderwelsch.
+                Null. Wir erklären alles in normaler Sprache. Kein Technik-Kauderwelsch. Du hast nach dem Launch einen direkten Ansprechpartner.
               </div>
             </div>
           </div>
@@ -699,9 +552,9 @@
               <span>Was ist mit Hosting und Wartung?</span>
               <span class="faq-trigger__icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-body" role="region">
+            <div class="faq-body">
               <div class="faq-body__inner">
-                Hosting ist im Paket enthalten. Laufende Wartung und Updates können als Retainer dazugebucht werden — transparent und monatlich kündbar.
+                Hosting ist inklusive. Laufende Wartung und Updates können monatlich dazugebucht werden. Transparent, monatlich kündbar.
               </div>
             </div>
           </div>
@@ -711,7 +564,7 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         9. ABSCHLUSS-CTA
+         ABSCHLUSS-CTA
          ══════════════════════════════════════ -->
     <section class="section-cta section" id="kontakt" aria-label="Kontakt aufnehmen">
       <div class="section-cta__glow" aria-hidden="true"></div>
@@ -723,15 +576,15 @@
             Aber deine Website <span class="text-gold">tut es gerade.</span>
           </h2>
           <p class="section-cta__sub fade-up stagger-2">
-            Lass uns das ändern. 15 Minuten Erstgespräch — kostenlos, unverbindlich, konkreter Plan.
+            15 Minuten Erstgespräch mit Hannes oder Jonas. Kostenlos, unverbindlich, konkreter Plan.
           </p>
 
-          <a href="#kontakt" class="btn btn--primary btn--lg btn--cta-pulse fade-up stagger-3">
+          <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--cta-pulse fade-up stagger-3">
             Jetzt Erstgespräch buchen
           </a>
 
           <div class="section-cta__trust fade-up stagger-4">
-            <span class="trust-item">Kostenlos &amp; unverbindlich</span>
+            <span class="trust-item">Kostenlos und unverbindlich</span>
             <span class="trust-item">Antwort innerhalb von 24h</span>
             <span class="trust-item">Fertig in 30 Tagen</span>
             <span class="trust-item">Geld-zurück-Garantie</span>
@@ -756,29 +609,27 @@
         <div class="footer__right">
           <nav class="footer__nav" aria-label="Footer Navigation">
             <a href="#leistungen">Leistungen</a>
+            <a href="#ueber-uns">Über uns</a>
             <a href="#referenzen">Referenzen</a>
-            <a href="#prozess">Ablauf</a>
             <a href="#faq">FAQ</a>
-            <a href="#kontakt">Kontakt</a>
+            <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener">Erstgespräch</a>
           </nav>
 
           <div class="footer__meta">
             <p class="footer__sister">
-              Social Media & Content? →
-              <a href="#" rel="noopener">GoldenPost</a>
+              Content Marketing und Social Media?
+              <a href="https://goldenpost.media/home" target="_blank" rel="noopener">GoldenPost</a>
             </p>
-
             <div class="footer__social">
               <a href="#" aria-label="LinkedIn" rel="noopener">LinkedIn</a>
               <a href="#" aria-label="Instagram" rel="noopener">Instagram</a>
-              <a href="#" aria-label="YouTube" rel="noopener">YouTube</a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <p class="footer__copyright">© 2026 GoldenWeb – Alle Rechte vorbehalten</p>
+        <p class="footer__copyright">© 2026 GoldenWeb. Alle Rechte vorbehalten.</p>
         <nav class="footer__legal" aria-label="Rechtliches">
           <a href="#">Impressum</a>
           <a href="#">Datenschutz</a>
@@ -788,12 +639,9 @@
     </div>
   </footer>
 
-  <!-- JS -->
   <script src="assets/js/animations.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/accordion.js" defer></script>
-  <script src="assets/js/carousel.js" defer></script>
-  <script src="assets/js/flowchart.js" defer></script>
 
 </body>
 </html>

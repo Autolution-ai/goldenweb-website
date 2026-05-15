@@ -50,18 +50,13 @@
 .stagger-7  { transition-delay: calc(7  * var(--duration-stagger)); }
 .stagger-8  { transition-delay: calc(8  * var(--duration-stagger)); }
 
-/* ═══ Marquee ═══ */
+/* ═══ Marquee ═══
+   .marquee__inner enthält Chips DOPPELT (24 = 12×2).
+   Animation translateX(-50%) schiebt zur zweiten Hälfte = nahtloser Loop.
+   ════════════════ */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
-}
-
-.marquee-track {
-  animation: marquee 35s linear infinite;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
 }
 
 /* ═══ Hero Grid Drift ═══ */
