@@ -366,49 +366,158 @@
       <div class="container">
         <div class="section-header fade-up">
           <span class="eyebrow">Referenzen</span>
-          <h2>Unser erstes Projekt.<br>Viele weitere folgen.</h2>
+          <h2>Ergebnisse, die für sich sprechen.</h2>
+          <p>Zieh den Regler und sieh selbst, was möglich ist.</p>
         </div>
 
-        <div class="referenz-single fade-up">
-          <div class="referenz-browser">
-            <div class="referenz-browser__bar">
-              <div class="referenz-browser__dots" aria-hidden="true">
+        <!-- ── Case Study 1: KFZ Schwanke ── -->
+        <div class="case-study fade-up">
+          <div class="case-study__visual">
+            <div class="ba-slider" data-slider aria-label="Vorher-Nachher Vergleich KFZ Schwanke">
+              <img
+                class="ba-slider__before"
+                src="assets/media/kfz-before.jpg"
+                alt="KFZ Schwanke alte Website"
+                loading="lazy"
+              >
+              <div class="ba-slider__after">
+                <img
+                  src="assets/media/kfz-after.jpg"
+                  alt="KFZ Schwanke neue Website"
+                  loading="lazy"
+                >
+              </div>
+              <div class="ba-slider__handle" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <div class="ba-slider__line"></div>
+                <div class="ba-slider__grip">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M7 4L1 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 4L19 10L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+              <span class="ba-slider__label ba-slider__label--before" aria-hidden="true">Vorher</span>
+              <span class="ba-slider__label ba-slider__label--after" aria-hidden="true">Nachher</span>
+            </div>
+          </div>
+
+          <div class="case-study__content">
+            <div class="case-study__meta">
+              <span class="tag">KFZ / Gutachten</span>
+              <span class="tag tag--gold">Live</span>
+            </div>
+            <h3 class="case-study__title">KFZ Schwanke</h3>
+            <p class="case-study__desc">
+              Vom veralteten Baukasten zur professionellen Website, die Vertrauen schafft und Kunden überzeugt. In 30 Tagen online.
+            </p>
+            <div class="case-study__stats">
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">30</span>
+                <span class="case-study__stat-label">Tage bis Launch</span>
+              </div>
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">100%</span>
+                <span class="case-study__stat-label">Mobil optimiert</span>
+              </div>
+            </div>
+            <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+              Auch so eine Website anfragen
+            </a>
+          </div>
+        </div>
+
+        <!-- ── Case Study 2: ThetaHealing ── -->
+        <div class="case-study case-study--reverse fade-up">
+          <div class="case-study__content">
+            <div class="case-study__meta">
+              <span class="tag">Coaching / Gesundheit</span>
+              <span class="tag tag--pending">In Umsetzung</span>
+            </div>
+            <h3 class="case-study__title">ThetaHealing Anja Küthe</h3>
+            <p class="case-study__desc">
+              Die alte WordPress-Website hat nicht widergespiegelt, was Anja wirklich anbietet. Die neue Site kommuniziert Vertrauen, Klarheit und Professionalität.
+            </p>
+            <div class="case-study__stats">
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">28</span>
+                <span class="case-study__stat-label">Tage Ziel-Launch</span>
+              </div>
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">Neu</span>
+                <span class="case-study__stat-label">Kompletter Relaunch</span>
+              </div>
+            </div>
+            <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
+              Eigenes Projekt besprechen
+            </a>
+          </div>
+
+          <div class="case-study__visual">
+            <div class="case-study__coming-soon">
+              <img
+                src="assets/media/theta-before.jpg"
+                alt="ThetaHealing alte Website von Anja Küthe"
+                loading="lazy"
+              >
+              <div class="case-study__overlay">
+                <div class="case-study__overlay-content">
+                  <div class="case-study__overlay-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                      <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <span>Neue Website kommt bald</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Case Study 3: Belitz ── -->
+        <div class="case-study case-study--showcase fade-up">
+          <div class="case-study__browser">
+            <div class="case-study__browser-bar" aria-hidden="true">
+              <div class="case-study__browser-dots">
                 <span></span><span></span><span></span>
               </div>
-              <div class="referenz-browser__url">belitz-gruppe.de</div>
+              <div class="case-study__browser-url">elektro-belitz-website.vercel.app</div>
             </div>
-            <div class="referenz-browser__screen">
-              <div class="referenz-browser__content">
-                <div class="referenz-browser__shimmer"></div>
-                <div class="referenz-browser__lines">
-                  <div class="referenz-line referenz-line--hero"></div>
-                  <div class="referenz-line referenz-line--sub"></div>
-                  <div class="referenz-line referenz-line--btn"></div>
-                </div>
-                <div class="referenz-browser__badge">
-                  <span class="referenz-launch-badge">Launch: Q3 2026</span>
-                </div>
-              </div>
+            <div class="case-study__browser-screen">
+              <img
+                src="assets/media/belitz-after.jpg"
+                alt="Elektro Belitz Unternehmensgruppe neue Website"
+                loading="lazy"
+              >
             </div>
           </div>
 
-          <div class="referenz-info">
-            <div class="referenz-info__meta">
-              <span class="tag">Unternehmensgruppe</span>
-              <span class="tag tag--gold">Aktuell in Umsetzung</span>
+          <div class="case-study__showcase-info">
+            <div class="case-study__meta">
+              <span class="tag">Elektro / Unternehmensgruppe</span>
+              <span class="tag tag--gold">Live</span>
             </div>
-            <h3 class="referenz-info__title">Belitz Unternehmensgruppe</h3>
-            <p class="referenz-info__desc">
-              Website und System-Integration für eine Bau- und Immobiliengruppe. Vollständige digitale Präsenz mit Anfragen-Automatisierung.
+            <h3 class="case-study__title">Belitz Unternehmensgruppe</h3>
+            <p class="case-study__desc">
+              Familienunternehmen seit 1945. Elektroinstallation, Tiefbau und Telekommunikation. Partner von Deutscher Telekom und E.DIS. Wir haben ihrer Expertise endlich eine Website gegeben, die das zeigt.
             </p>
-            <div class="referenz-info__highlight">
-              <p>Dein Unternehmen könnte das nächste sein.</p>
-              <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">
-                Erstgespräch buchen
-              </a>
+            <div class="case-study__stats case-study__stats--row">
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">1945</span>
+                <span class="case-study__stat-label">Gegründet</span>
+              </div>
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">3</span>
+                <span class="case-study__stat-label">Geschäftsbereiche</span>
+              </div>
+              <div class="case-study__stat">
+                <span class="case-study__stat-value">30</span>
+                <span class="case-study__stat-label">Tage bis Launch</span>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -642,6 +751,7 @@
   <script src="assets/js/animations.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/accordion.js" defer></script>
+  <script src="assets/js/slider.js" defer></script>
 
 </body>
 </html>
