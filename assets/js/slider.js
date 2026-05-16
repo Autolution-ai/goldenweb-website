@@ -1,14 +1,38 @@
 (function () {
+
+  function syncScrollDistance(slider) {
+    var imgs      = Array.from(slider.querySelectorAll('.ba-slider__track img'));
+    var sliderH   = slider.offsetHeight;
+
+    function calculate() {
+      var min = Infinity;
+      imgs.forEach(function (img) {
+        if (!img.complete || img.naturalHeight === 0) return;
+        var scrollable = img.offsetHeight - sliderH;
+        if (scrollable > 0) min = Math.min(min, scrollable);
+      });
+      if (min < Infinity) {
+        slider.style.setProperty('--ba-scroll', '-' + Math.round(min * 0.92) + 'px');
+      }
+    }
+
+    calculate();
+    imgs.forEach(function (img) { img.addEventListener('load', calculate); });
+    window.addEventListener('load', calculate);
+    window.addEventListener('resize', calculate);
+  }
+
   function initSliders() {
     document.querySelectorAll('[data-slider]').forEach(function (slider) {
       var handle     = slider.querySelector('.ba-slider__handle');
       var isDragging = false;
 
+      syncScrollDistance(slider);
+
       function setPos(clientX) {
         var rect = slider.getBoundingClientRect();
         var x    = Math.max(0, Math.min(clientX - rect.left, rect.width));
-        var pct  = (x / rect.width * 100).toFixed(2) + '%';
-        slider.style.setProperty('--pos', pct);
+        slider.style.setProperty('--pos', (x / rect.width * 100).toFixed(2) + '%');
       }
 
       function onMove(e) {
@@ -28,7 +52,7 @@
         slider.classList.remove('is-dragging');
       }
 
-      handle.addEventListener('mousedown', onDown);
+      handle.addEventListener('mousedown',  onDown);
       handle.addEventListener('touchstart', function () {
         isDragging = true;
         slider.classList.add('is-dragging');

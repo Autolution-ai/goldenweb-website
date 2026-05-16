@@ -2354,7 +2354,7 @@ html, body {
 
 @keyframes ba-scroll {
   from { transform: translateY(0); }
-  to   { transform: translateY(-52%); }
+  to   { transform: translateY(var(--ba-scroll, -900px)); }
 }
 
 .ba-slider__track {
@@ -2362,7 +2362,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  animation: ba-scroll 16s ease-in-out infinite alternate;
+  animation: ba-scroll 20s linear infinite alternate;
 }
 
 .ba-slider__track img {
