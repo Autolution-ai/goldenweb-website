@@ -161,7 +161,48 @@ html, body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding-top: 80px;
+}
+
+/* ── Fullscreen Canvas Background ── */
+.hero__scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-bg-base);
+}
+
+.hero__canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Dark overlay: left heavy for text, fades right ── */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(100deg,
+      rgba(12,11,9,0.92) 0%,
+      rgba(12,11,9,0.72) 38%,
+      rgba(12,11,9,0.35) 62%,
+      rgba(12,11,9,0.10) 100%
+    ),
+    linear-gradient(180deg,
+      rgba(12,11,9,0.45) 0%,
+      transparent 20%,
+      transparent 65%,
+      rgba(12,11,9,0.85) 100%
+    );
+}
+
+/* Mobile: full overlay */
+@media (max-width: 859px) {
+  .hero__overlay {
+    background: rgba(12,11,9,0.72);
+  }
 }
 
 .hero__glow {
@@ -169,46 +210,20 @@ html, body {
   inset: 0;
   background: var(--gradient-hero-glow);
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
 }
 
-.hero__grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(200,169,110,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,169,110,0.035) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: grid-drift 20s linear infinite alternate;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ── Split Layout ── */
-.hero__split {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  gap: var(--space-12);
-  padding-block: var(--space-16) var(--space-12);
+/* ── Content ── */
+.hero__content {
   position: relative;
-  z-index: 1;
-}
-
-@media (min-width: 860px) {
-  .hero__split {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
-    padding-block: var(--space-20) var(--space-16);
-  }
-}
-
-/* ── Left: Text ── */
-.hero__left {
+  z-index: 3;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: var(--space-12);
+  max-width: 680px;
 }
 
 .hero__kicker {
@@ -238,17 +253,18 @@ html, body {
 
 .hero__headline {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: var(--weight-bold);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   color: var(--color-text-primary);
   margin-bottom: var(--space-6);
+  text-shadow: 0 2px 24px rgba(0,0,0,0.6);
 }
 
 .hero__sub {
   font-size: clamp(var(--text-md), 1.5vw, var(--text-lg));
-  color: var(--color-text-secondary);
+  color: rgba(240,237,232,0.88);
   line-height: var(--leading-relaxed);
   max-width: 480px;
   margin-bottom: var(--space-10);
@@ -281,28 +297,6 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2) var(--space-5);
-}
-
-/* ── Right: Canvas Scene ── */
-.hero__scene {
-  position: relative;
-  height: 440px;
-  overflow: hidden;
-  border-radius: var(--radius-2xl);
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border-default);
-}
-
-@media (max-width: 859px) {
-  .hero__scene {
-    height: 240px;
-  }
-}
-
-.hero__canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
 /* ── Code Panel (scroll animation) ── */

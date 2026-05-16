@@ -65,50 +65,49 @@
          ══════════════════════════════════════ -->
     <section class="hero" id="hero" aria-label="Hero">
       <div class="hero__sticky">
+
+      <!-- Fullscreen Background Canvas -->
+      <div class="hero__scene" id="heroScene" aria-hidden="true">
+        <canvas id="heroCanvas" class="hero__canvas"></canvas>
+      </div>
+
+      <!-- Dark overlay for text readability -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- Subtle gold glow -->
       <div class="hero__glow hero-glow-pulse" aria-hidden="true"></div>
-      <div class="hero__grid" aria-hidden="true"></div>
 
-      <!-- Split Layout -->
-      <div class="hero__split container">
-
-        <!-- LEFT: Text -->
-        <div class="hero__left">
-          <div class="hero__kicker fade-up">
-            <span class="hero__kicker-dot" aria-hidden="true"></span>
-            Für Handwerker und lokale Dienstleister
-          </div>
-
-          <h1 class="hero__headline fade-up stagger-1">
-            Deine Website<br>
-            arbeitet <span class="text-gold">24/7</span>,<br>
-            du nicht mehr.
-          </h1>
-
-          <p class="hero__sub fade-up stagger-2">
-            Wir bauen ein System aus Website, KI und Automatisierung, das planbar neue Anfragen bringt. Fertig in 30 Tagen.
-          </p>
-
-          <div class="hero__ctas fade-up stagger-3">
-            <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--cta-pulse">
-              Kostenloses Erstgespräch
-            </a>
-            <a href="#leistungen" class="btn btn--ghost btn--lg">
-              Leistungen ansehen
-            </a>
-          </div>
-
-          <div class="hero__trust fade-up stagger-4">
-            <span class="trust-item">Kein Vorwissen nötig</span>
-            <span class="trust-item">Fertig in 30 Tagen</span>
-            <span class="trust-item">Geld-zurück-Garantie</span>
-          </div>
+      <!-- Content -->
+      <div class="hero__content container">
+        <div class="hero__kicker fade-up">
+          <span class="hero__kicker-dot" aria-hidden="true"></span>
+          Für Handwerker und lokale Dienstleister
         </div>
 
-        <!-- RIGHT: Canvas Frame Scrubber -->
-        <div class="hero__scene" id="heroScene" aria-hidden="true">
-          <canvas id="heroCanvas" class="hero__canvas"></canvas>
+        <h1 class="hero__headline fade-up stagger-1">
+          Deine Website<br>
+          arbeitet <span class="text-gold">24/7</span>,<br>
+          du nicht mehr.
+        </h1>
+
+        <p class="hero__sub fade-up stagger-2">
+          Wir bauen ein System aus Website, KI und Automatisierung, das planbar neue Anfragen bringt. Fertig in 30 Tagen.
+        </p>
+
+        <div class="hero__ctas fade-up stagger-3">
+          <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--cta-pulse">
+            Kostenloses Erstgespräch
+          </a>
+          <a href="#leistungen" class="btn btn--ghost btn--lg">
+            Leistungen ansehen
+          </a>
         </div>
 
+        <div class="hero__trust fade-up stagger-4">
+          <span class="trust-item">Kein Vorwissen nötig</span>
+          <span class="trust-item">Fertig in 30 Tagen</span>
+          <span class="trust-item">Geld-zurück-Garantie</span>
+        </div>
       </div>
 
       <!-- Marquee -->

@@ -53,14 +53,14 @@ gsap.registerPlugin(ScrollTrigger);
     canvas.height = Math.round(el.offsetHeight * dpr);
   }
 
-  /* Frame auf Canvas zeichnen (object-fit: contain) */
+  /* Frame auf Canvas zeichnen (object-fit: cover) */
   function drawFrame (index) {
     var img = (loaded[index] ? images[index] : null) || nearestLoaded(index);
     if (!img) return;
 
     var cw = canvas.width, ch = canvas.height;
     var iw = img.naturalWidth, ih = img.naturalHeight;
-    var scale = Math.min(cw / iw, ch / ih);
+    var scale = Math.max(cw / iw, ch / ih);
     var x = (cw - iw * scale) / 2;
     var y = (ch - ih * scale) / 2;
 
