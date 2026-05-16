@@ -26,10 +26,9 @@ gsap.registerPlugin(ScrollTrigger);
   var PRIORITY    = 8;   /* erste N Frames mit high-priority laden */
   var PX_PER_FRAME = 30; /* Scrollpixel pro Frame → Gesamtscroll = 81×30 = 2430px */
 
-  var images      = new Array(FRAME_COUNT);
-  var loaded      = new Array(FRAME_COUNT).fill(false);
-  var curFrame    = 0;
-  var prioLoaded  = 0;
+  var images   = new Array(FRAME_COUNT);
+  var loaded   = new Array(FRAME_COUNT).fill(false);
+  var curFrame = 0;
 
   /* ── Hilfsfunktionen ──────────────────────────────────── */
 
@@ -82,10 +81,9 @@ gsap.registerPlugin(ScrollTrigger);
         trigger    : '#hero',
         start      : 'top top',
         end        : '+=' + (FRAME_COUNT * PX_PER_FRAME),
-        scrub      : 0.5,
+        scrub      : 0.3,
         pin        : true,
         pinSpacing : true,
-        anticipatePin: 1,
         onUpdate   : function () {
           var f = Math.round(proxy.frame);
           if (f !== curFrame) {
@@ -99,6 +97,8 @@ gsap.registerPlugin(ScrollTrigger);
 
   /* ── Preload ──────────────────────────────────────────── */
 
+  var scrollTriggerInited = false;
+
   function loadFrame (i, high) {
     var img = new Image();
     if (high) img.fetchPriority = 'high';
@@ -106,15 +106,15 @@ gsap.registerPlugin(ScrollTrigger);
     img.onload = function () {
       loaded[i] = true;
 
-      /* Priority-Frames: sofort zeichnen + ScrollTrigger starten */
-      if (i < PRIORITY) {
-        prioLoaded++;
-        if (curFrame === i) drawFrame(i);
-        if (prioLoaded === PRIORITY) {
-          resizeCanvas();
-          drawFrame(0);
-          initScrollTrigger();
-        }
+      /* Erstes geladenes Frame: Canvas zeigen + ScrollTrigger starten */
+      if (!scrollTriggerInited) {
+        scrollTriggerInited = true;
+        resizeCanvas();
+        drawFrame(i);
+        initScrollTrigger();
+      } else {
+        /* Wenn aktuelles Frame nachgeladen: neu zeichnen */
+        if (i === curFrame) drawFrame(i);
       }
     };
 
