@@ -129,7 +129,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip ≠ hidden: kein BFC, bricht kein sticky/GSAP */
 }
 
 body {
@@ -139,7 +139,7 @@ body {
   line-height: var(--leading-normal);
   color: var(--color-text-primary);
   background-color: var(--color-bg-base);
-  overflow-x: hidden;
+  overflow-x: clip; /* clip ≠ hidden: kein BFC, bricht kein sticky/GSAP */
 }
 
 img, video { max-width: 100%; display: block; }

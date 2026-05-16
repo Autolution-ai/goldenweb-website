@@ -1,17 +1,19 @@
 /* ═══════════════════════════════════════════════════════════
-   VIDEO SCROLL  –  GSAP ScrollTrigger + Blob preload
+   VIDEO SCROLL  –  GSAP ScrollTrigger, korrekte Methode
    ═══════════════════════════════════════════════════════════
 
-   Why GSAP instead of position:sticky or wheel-event hack?
-   ─ GSAP pins via position:fixed internally, bypassing the
-     body { overflow-x: hidden } that breaks CSS sticky.
-   ─ ScrollTrigger's onUpdate fires every scroll frame and
-     maps self.progress (0–1) directly to video.currentTime.
-   ─ Blob preload puts the full MP4 in memory so every frame
-     is instantly seekable with no partial-content stalls.
+   Warum vorher nichts funktionierte:
+   1. body { overflow-x: hidden } → erzeugt BFC → bricht sticky/pin
+      Fix: overflow-x: clip in design-system.css (kein BFC!)
+   2. Falsches GSAP-Pattern: onUpdate + manuelle Berechnung
+      Fix: tl.to(video, { currentTime: video.duration, ease: "none" })
+           GSAP interpoliert currentTime direkt – korrekte Methode.
 
-   Scroll distance: duration × 450px per second of video
-   (≈ 2250px for a 5s clip → comfortable cinematic speed)
+   Ablauf:
+   1. Blob-Preload → ganzes MP4 im Speicher, Seeks sofort
+   2. loadedmetadata → duration bekannt
+   3. GSAP Timeline mit pin:true (= position:fixed, kein sticky nötig)
+      + scrub:1 + tl.to(video, currentTime)
    ═══════════════════════════════════════════════════════════ */
 
 gsap.registerPlugin(ScrollTrigger);
@@ -25,10 +27,7 @@ gsap.registerPlugin(ScrollTrigger);
 
   if (!video) return;
 
-  var duration = 0;
-  var ready    = false;
-
-  /* ── Blob preloader ───────────────────────────────────── */
+  /* ── Blob preload für frame-genaues Seeking ───────────── */
   function loadBlob (src) {
     return fetch(src)
       .then(function (res) {
@@ -55,28 +54,26 @@ gsap.registerPlugin(ScrollTrigger);
       });
   }
 
-  /* ── GSAP ScrollTrigger setup (called after video ready) ─ */
-  function initScrollTrigger () {
-    /* Scroll distance = 450px per second of video content */
-    var scrollPx = Math.round(duration * 450);
-
-    ScrollTrigger.create({
-      trigger    : '#hero',
-      start      : 'top top',
-      end        : '+=' + scrollPx,
-      pin        : true,          /* GSAP uses position:fixed → bypasses overflow-x:hidden */
-      pinSpacing : true,          /* adds spacer so page content flows correctly after */
-      anticipatePin: 1,           /* prevents snap-jump when pinning starts */
-      onUpdate   : function (self) {
-        if (!ready || !duration) return;
-        video.currentTime = self.progress * duration;
+  /* ── GSAP ScrollTrigger Setup ─────────────────────────── */
+  function initScrollTrigger (dur) {
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger     : '#hero',
+        start       : 'top top',
+        end         : '+=' + Math.round(dur * 480), /* px pro Sekunde Video */
+        scrub       : 1,          /* 1s Catch-Up → flüssiges Gefühl */
+        pin         : true,       /* GSAP pin = position:fixed, kein CSS sticky */
+        pinSpacing  : true,
+        anticipatePin: 1
       }
     });
+
+    /* Kern: GSAP interpoliert currentTime direkt von 0 → duration */
+    tl.to(video, { currentTime: dur, ease: 'none' });
   }
 
   /* ══════════════════════════════════════════════════════
-     gsap.matchMedia — handles desktop vs mobile and
-     prefers-reduced-motion correctly
+     Responsive Setup via gsap.matchMedia
      ══════════════════════════════════════════════════════ */
   var mm = gsap.matchMedia();
 
@@ -88,7 +85,7 @@ gsap.registerPlugin(ScrollTrigger);
     function (ctx) {
       var c = ctx.conditions;
 
-      /* Mobile / reduced-motion: static display only */
+      /* Mobile / Reduced Motion ─────────────────────────── */
       if (!c.isDesktop || c.reduceMotion) {
         video.src = video.dataset.src;
         if (c.reduceMotion) {
@@ -101,7 +98,7 @@ gsap.registerPlugin(ScrollTrigger);
         return;
       }
 
-      /* ── Desktop: blob preload → ScrollTrigger ───────── */
+      /* Desktop ─────────────────────────────────────────── */
       if (loaderEl) loaderEl.style.display = 'flex';
 
       loadBlob(video.dataset.src)
@@ -117,33 +114,26 @@ gsap.registerPlugin(ScrollTrigger);
           });
         })
         .then(function () {
-          duration          = video.duration || 0;
+          var dur = video.duration || 0;
           video.currentTime = 0;
-          ready             = true;
 
-          /* Fade out loader */
           if (loaderEl) {
             loaderEl.style.transition = 'opacity 0.5s ease';
             loaderEl.style.opacity    = '0';
             setTimeout(function () { loaderEl.style.display = 'none'; }, 520);
           }
 
-          initScrollTrigger();
+          initScrollTrigger(dur);
           ScrollTrigger.refresh();
         })
         .catch(function () {
-          /* Fallback: direct src without blob cache */
           if (loaderEl) loaderEl.style.display = 'none';
           video.src = video.dataset.src;
           video.addEventListener('loadedmetadata', function () {
-            duration = video.duration || 0;
-            ready    = true;
-            initScrollTrigger();
-            ScrollTrigger.refresh();
+            initScrollTrigger(video.duration || 0);
           }, { once: true });
           video.load();
         });
     }
   );
-
 })();
