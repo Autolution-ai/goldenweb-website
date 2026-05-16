@@ -2338,6 +2338,7 @@ html, body {
 .ba-slider {
   position: relative;
   overflow: hidden;
+  height: 520px;
   border-radius: var(--radius-xl);
   border: 1px solid var(--color-border-default);
   box-shadow: var(--shadow-lg);
@@ -2347,26 +2348,36 @@ html, body {
   touch-action: pan-y;
 }
 
-.ba-slider__before {
-  display: block;
+@keyframes ba-scroll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-52%); }
+}
+
+.ba-slider__track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: ba-scroll 16s ease-in-out infinite alternate;
+}
+
+.ba-slider__track img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  object-position: top;
+  display: block;
+  pointer-events: none;
+}
+
+.ba-slider:hover .ba-slider__track,
+.ba-slider.is-dragging .ba-slider__track {
+  animation-play-state: paused;
 }
 
 .ba-slider__after {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   clip-path: inset(0 0 0 var(--pos, 50%));
-}
-
-.ba-slider__after img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
 }
 
 .ba-slider__handle {

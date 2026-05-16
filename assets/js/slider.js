@@ -1,12 +1,7 @@
-/* ═══════════════════════════════════════════════════════
-   BEFORE / AFTER DRAG SLIDER – GoldenWeb
-   ═══════════════════════════════════════════════════════ */
-
 (function () {
   function initSliders() {
     document.querySelectorAll('[data-slider]').forEach(function (slider) {
-      var handle = slider.querySelector('.ba-slider__handle');
-      var after  = slider.querySelector('.ba-slider__after');
+      var handle     = slider.querySelector('.ba-slider__handle');
       var isDragging = false;
 
       function setPos(clientX) {
@@ -18,29 +13,35 @@
 
       function onMove(e) {
         if (!isDragging) return;
-        var cx = e.touches ? e.touches[0].clientX : e.clientX;
-        setPos(cx);
+        setPos(e.touches ? e.touches[0].clientX : e.clientX);
       }
 
-      function onUp() { isDragging = false; }
-
-      handle.addEventListener('mousedown', function (e) {
+      function onDown(e) {
         isDragging = true;
+        slider.classList.add('is-dragging');
         e.preventDefault();
-      });
+      }
 
-      handle.addEventListener('touchstart', function (e) {
+      function onUp() {
+        if (!isDragging) return;
+        isDragging = false;
+        slider.classList.remove('is-dragging');
+      }
+
+      handle.addEventListener('mousedown', onDown);
+      handle.addEventListener('touchstart', function () {
         isDragging = true;
+        slider.classList.add('is-dragging');
       }, { passive: true });
 
       slider.addEventListener('click', function (e) {
-        setPos(e.clientX);
+        if (!isDragging) setPos(e.clientX);
       });
 
       window.addEventListener('mousemove', onMove);
-      window.addEventListener('touchmove', onMove, { passive: true });
-      window.addEventListener('mouseup',   onUp);
-      window.addEventListener('touchend',  onUp);
+      window.addEventListener('touchmove',  onMove, { passive: true });
+      window.addEventListener('mouseup',    onUp);
+      window.addEventListener('touchend',   onUp);
     });
   }
 
