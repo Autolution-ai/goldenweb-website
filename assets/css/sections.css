@@ -152,12 +152,19 @@ html, body {
    ════════════════════════════════════════ */
 .hero {
   position: relative;
-  width: 100%;
+  height: 350vh; /* tall scroll container – video plays as you scroll */
+}
+
+@media (max-width: 859px) {
+  .hero {
+    height: auto; /* mobile: normal flow */
+  }
 }
 
 .hero__sticky {
-  position: relative;
-  min-height: 100svh;
+  position: sticky;
+  top: 0;
+  height: 100svh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -286,17 +293,19 @@ html, body {
 /* ── Right: Video Scene ── */
 .hero__scene {
   position: relative;
-  height: 420px;
+  height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: var(--radius-2xl);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
 }
 
 @media (max-width: 859px) {
   .hero__scene {
-    height: 260px;
+    height: 240px;
   }
 }
 
@@ -305,7 +314,42 @@ html, body {
   height: 100%;
   object-fit: contain;
   display: block;
+}
+
+/* ── Loader ── */
+.hero__loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  background: var(--color-bg-elevated);
+  z-index: 2;
   border-radius: var(--radius-2xl);
+}
+
+.hero__loader-track {
+  width: 140px;
+  height: 2px;
+  background: var(--color-border-default);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.hero__loader-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--gradient-gold);
+  border-radius: var(--radius-full);
+  transition: width 0.15s linear;
+}
+
+.hero__loader-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--tracking-wide);
 }
 
 /* ── Code Panel (scroll animation) ── */

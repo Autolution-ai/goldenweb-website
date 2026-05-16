@@ -106,16 +106,26 @@
 
         <!-- RIGHT: Scroll-driven Video -->
         <div class="hero__scene fade-up stagger-2" aria-hidden="true">
+
+          <!-- Loading bar -->
+          <div class="hero__loader" id="heroLoader">
+            <div class="hero__loader-track">
+              <div class="hero__loader-bar" id="heroLoaderBar"></div>
+            </div>
+            <span class="hero__loader-label">Wird geladen…</span>
+          </div>
+
+          <!-- Video: data-src is set by JS after blob preload -->
           <video
             id="heroVideo"
             class="hero__video"
             muted
             playsinline
-            preload="auto"
+            preload="none"
             disablepictureinpicture
-          >
-            <source src="assets/media/hero-animation.mp4" type="video/mp4">
-          </video>
+            data-src="assets/media/hero-animation.mp4"
+          ></video>
+
         </div>
 
       </div>
