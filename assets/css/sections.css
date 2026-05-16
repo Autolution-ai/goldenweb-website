@@ -177,32 +177,18 @@ html, body {
   display: block;
 }
 
-/* ── Dark overlay: left heavy for text, fades right ── */
+/* ── Subtle bottom vignette only ── */
 .hero__overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background:
-    linear-gradient(100deg,
-      rgba(12,11,9,0.92) 0%,
-      rgba(12,11,9,0.72) 38%,
-      rgba(12,11,9,0.35) 62%,
-      rgba(12,11,9,0.10) 100%
-    ),
-    linear-gradient(180deg,
-      rgba(12,11,9,0.45) 0%,
-      transparent 20%,
-      transparent 65%,
-      rgba(12,11,9,0.85) 100%
-    );
-}
-
-/* Mobile: full overlay */
-@media (max-width: 859px) {
-  .hero__overlay {
-    background: rgba(12,11,9,0.72);
-  }
+  background: linear-gradient(180deg,
+    rgba(12,11,9,0.25) 0%,
+    transparent 15%,
+    transparent 60%,
+    rgba(12,11,9,0.9) 100%
+  );
 }
 
 .hero__glow {
@@ -213,24 +199,35 @@ html, body {
   z-index: 2;
 }
 
-/* ── Content ── */
+/* ── Content wrapper: positions card bottom-left ── */
 .hero__content {
-  position: relative;
+  position: absolute;
+  bottom: var(--space-16);
+  left: 0;
+  right: 0;
   z-index: 3;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 100px;
-  padding-bottom: var(--space-12);
-  max-width: 680px;
+  padding-inline: var(--space-8);
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+/* ── Frosted glass card ── */
+.hero__card {
+  max-width: 480px;
+  background: rgba(10,9,8,0.78);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(200,169,110,0.18);
+  border-top: 2px solid rgba(200,169,110,0.45);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8) var(--space-8) var(--space-8);
 }
 
 .hero__kicker {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 6px 16px;
+  padding: 5px 14px;
   background: var(--color-gold-muted);
   border: 1px solid var(--color-border-gold);
   border-radius: var(--radius-full);
@@ -239,7 +236,7 @@ html, body {
   letter-spacing: var(--tracking-wide);
   color: var(--color-gold);
   text-transform: uppercase;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
 }
 
 .hero__kicker-dot {
@@ -253,50 +250,40 @@ html, body {
 
 .hero__headline {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
   font-weight: var(--weight-bold);
-  line-height: var(--leading-tight);
+  line-height: var(--leading-snug);
   letter-spacing: var(--tracking-tight);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-6);
-  text-shadow: 0 2px 24px rgba(0,0,0,0.6);
+  margin-bottom: var(--space-4);
 }
 
 .hero__sub {
-  font-size: clamp(var(--text-md), 1.5vw, var(--text-lg));
-  color: rgba(240,237,232,0.88);
+  font-size: var(--text-sm);
+  color: rgba(240,237,232,0.78);
   line-height: var(--leading-relaxed);
-  max-width: 480px;
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-8);
 }
 
 .hero__ctas {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: var(--space-3);
-  margin-bottom: var(--space-8);
-  width: 100%;
+  margin-bottom: var(--space-6);
 }
 
 .hero__ctas .btn {
-  width: 100%;
-  justify-content: center;
-}
-
-@media (min-width: 480px) {
-  .hero__ctas {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .hero__ctas .btn {
-    width: auto;
-  }
+  flex: 1 1 auto;
 }
 
 .hero__trust {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2) var(--space-5);
+  gap: var(--space-1) var(--space-4);
+}
+
+.hero__trust .trust-item {
+  font-size: var(--text-xs);
 }
 
 /* ── Code Panel (scroll animation) ── */
