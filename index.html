@@ -104,28 +104,16 @@
           </div>
         </div>
 
-        <!-- RIGHT: Scroll-driven Video -->
+        <!-- RIGHT: Placeholder (Animation folgt) -->
         <div class="hero__scene fade-up stagger-2" aria-hidden="true">
-
-          <!-- Loading bar -->
-          <div class="hero__loader" id="heroLoader">
-            <div class="hero__loader-track">
-              <div class="hero__loader-bar" id="heroLoaderBar"></div>
-            </div>
-            <span class="hero__loader-label">Wird geladen…</span>
+          <div class="hero__placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="3"/>
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 3v2M12 19v2M3 12h2M19 12h2"/>
+            </svg>
+            <span>Animation coming soon</span>
           </div>
-
-          <!-- Video: data-src is set by JS after blob preload -->
-          <video
-            id="heroVideo"
-            class="hero__video"
-            muted
-            playsinline
-            preload="none"
-            disablepictureinpicture
-            data-src="assets/media/hero-animation.mp4"
-          ></video>
-
         </div>
 
       </div>
@@ -804,13 +792,10 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="assets/js/animations.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/accordion.js" defer></script>
   <script src="assets/js/slider.js" defer></script>
-  <script src="assets/js/video-scroll.js"></script>
 
 </body>
 </html>
