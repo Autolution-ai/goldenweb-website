@@ -67,35 +67,238 @@
       <div class="hero__glow hero-glow-pulse" aria-hidden="true"></div>
       <div class="hero__grid" aria-hidden="true"></div>
 
-      <div class="hero__content">
-        <div class="hero__kicker fade-up">
-          <span class="hero__kicker-dot" aria-hidden="true"></span>
-          Für Handwerker und lokale Dienstleister
+      <!-- Split Layout -->
+      <div class="hero__split container">
+
+        <!-- LEFT: Text -->
+        <div class="hero__left">
+          <div class="hero__kicker fade-up">
+            <span class="hero__kicker-dot" aria-hidden="true"></span>
+            Für Handwerker und lokale Dienstleister
+          </div>
+
+          <h1 class="hero__headline fade-up stagger-1">
+            Deine Website<br>
+            arbeitet <span class="text-gold">24/7</span>,<br>
+            du nicht mehr.
+          </h1>
+
+          <p class="hero__sub fade-up stagger-2">
+            Wir bauen ein System aus Website, KI und Automatisierung, das planbar neue Anfragen bringt. Fertig in 30 Tagen.
+          </p>
+
+          <div class="hero__ctas fade-up stagger-3">
+            <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--cta-pulse">
+              Kostenloses Erstgespräch
+            </a>
+            <a href="#leistungen" class="btn btn--ghost btn--lg">
+              Leistungen ansehen
+            </a>
+          </div>
+
+          <div class="hero__trust fade-up stagger-4">
+            <span class="trust-item">Kein Vorwissen nötig</span>
+            <span class="trust-item">Fertig in 30 Tagen</span>
+            <span class="trust-item">Geld-zurück-Garantie</span>
+          </div>
         </div>
 
-        <h1 class="hero__headline fade-up stagger-1">
-          Deine Website arbeitet <span class="text-gold">24/7</span>,<br>
-          damit du es nicht mehr musst.
-        </h1>
+        <!-- RIGHT: 3D Scene -->
+        <div class="hero__scene fade-up stagger-2" id="heroScene" aria-hidden="true">
 
-        <p class="hero__sub fade-up stagger-2">
-          Wir bauen Websites für Handwerker und lokale Dienstleister, die planbar neue Anfragen bringen. Fertig in 30 Tagen. Deutschlandweit.
-        </p>
+          <!-- Code Rain Background -->
+          <div class="code-rain">
+            <div class="code-rain__col">
+              <pre>.anfragen {
+  automation: true;
+  speed: instant;
+  lost-leads: 0;
+}
 
-        <div class="hero__ctas fade-up stagger-3">
-          <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--cta-pulse">
-            Kostenloses Erstgespräch buchen
-          </a>
-          <a href="#leistungen" class="btn btn--ghost btn--lg">
-            Leistungen ansehen
-          </a>
+&lt;hero&gt;
+  &lt;h1&gt;Mehr Kunden.
+  Automatisch.&lt;/h1&gt;
+  &lt;cta&gt;Starten&lt;/cta&gt;
+&lt;/hero&gt;
+
+.conversion {
+  vorher: 0.8%;
+  nachher: 4.2%;
+  delta: +425%;
+}
+
+function onLead(d) {
+  crm.add(d);
+  team.notify();
+  // 0 missed
+}
+
+.website {
+  seo: local;
+  speed: 98/100;
+  mobile: true;
+}
+
+&lt;nav class="gw"&gt;
+  &lt;a&gt;Leistungen&lt;/a&gt;
+  &lt;a&gt;Kontakt&lt;/a&gt;
+&lt;/nav&gt;.anfragen {
+  automation: true;
+  speed: instant;
+  lost-leads: 0;
+}
+
+&lt;hero&gt;
+  &lt;h1&gt;Mehr Kunden.
+  Automatisch.&lt;/h1&gt;
+  &lt;cta&gt;Starten&lt;/cta&gt;
+&lt;/hero&gt;
+
+.conversion {
+  vorher: 0.8%;
+  nachher: 4.2%;
+  delta: +425%;
+}
+
+function onLead(d) {
+  crm.add(d);
+  team.notify();
+  // 0 missed
+}
+
+.website {
+  seo: local;
+  speed: 98/100;
+  mobile: true;
+}
+
+&lt;nav class="gw"&gt;
+  &lt;a&gt;Leistungen&lt;/a&gt;
+  &lt;a&gt;Kontakt&lt;/a&gt;
+&lt;/nav&gt;</pre>
+            </div>
+            <div class="code-rain__col code-rain__col--offset">
+              <pre>async function go() {
+  const lead =
+    await chat.get();
+  await crm.sync(lead);
+  return 'delivered';
+}
+
+.uptime: 24/7;
+.support: direkt;
+.garantie: 100%;
+
+&lt;section id="sys"&gt;
+  &lt;chatbot on /&gt;
+  &lt;speed-to-lead /&gt;
+  &lt;crm linked /&gt;
+&lt;/section&gt;
+
+.goldenweb {
+  builds: websites;
+  adds: chatbot;
+  result: leads++;
+}
+
+const system = {
+  website: true,
+  ki: active,
+  crm: synced,
+  // 24/7
+};async function go() {
+  const lead =
+    await chat.get();
+  await crm.sync(lead);
+  return 'delivered';
+}
+
+.uptime: 24/7;
+.support: direkt;
+.garantie: 100%;
+
+&lt;section id="sys"&gt;
+  &lt;chatbot on /&gt;
+  &lt;speed-to-lead /&gt;
+  &lt;crm linked /&gt;
+&lt;/section&gt;
+
+.goldenweb {
+  builds: websites;
+  adds: chatbot;
+  result: leads++;
+}
+
+const system = {
+  website: true,
+  ki: active,
+  crm: synced,
+  // 24/7
+};</pre>
+            </div>
+          </div>
+
+          <!-- 3D UI Card Stack -->
+          <div class="ui-stack" id="uiStack">
+
+            <!-- Nav bar card -->
+            <div class="ui-card ui-card--nav">
+              <div class="ui-card__dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="ui-card__nav-links">
+                <span>Leistungen</span>
+                <span>Referenzen</span>
+                <span>FAQ</span>
+              </div>
+              <div class="ui-card__nav-cta">Anfragen</div>
+            </div>
+
+            <!-- Main hero card -->
+            <div class="ui-card ui-card--main">
+              <span class="ui-card__eyebrow">Handwerk & Service</span>
+              <div class="ui-card__big-number">+340<span>%</span></div>
+              <p class="ui-card__label">Mehr Anfragen im Schnitt</p>
+              <div class="ui-card__divider"></div>
+              <div class="ui-card__metrics">
+                <div class="ui-card__metric">
+                  <span class="ui-card__metric-val">30</span>
+                  <span class="ui-card__metric-key">Tage bis Launch</span>
+                </div>
+                <div class="ui-card__metric">
+                  <span class="ui-card__metric-val">24/7</span>
+                  <span class="ui-card__metric-key">Online</span>
+                </div>
+                <div class="ui-card__metric">
+                  <span class="ui-card__metric-val">0</span>
+                  <span class="ui-card__metric-key">Leads verloren</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stats strip card -->
+            <div class="ui-card ui-card--stats">
+              <div class="ui-card__bar">
+                <span class="ui-card__bar-label">Conversion Rate</span>
+                <span class="ui-card__bar-val">4.2%</span>
+              </div>
+              <div class="ui-card__bar-track">
+                <div class="ui-card__bar-fill"></div>
+              </div>
+            </div>
+
+            <!-- Notification badge -->
+            <div class="ui-card ui-card--notif">
+              <div class="ui-card__notif-dot"></div>
+              <div class="ui-card__notif-text">
+                <span class="ui-card__notif-title">Neue Anfrage</span>
+                <span class="ui-card__notif-sub">KFZ Schwanke · gerade eben</span>
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <div class="hero__trust fade-up stagger-4">
-          <span class="trust-item">Kein technisches Vorwissen nötig</span>
-          <span class="trust-item">Fertig in 30 Tagen</span>
-          <span class="trust-item">Geld-zurück-Garantie</span>
-        </div>
       </div>
 
       <!-- Marquee -->
@@ -752,6 +955,7 @@
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/accordion.js" defer></script>
   <script src="assets/js/slider.js" defer></script>
+  <script src="assets/js/hero3d.js" defer></script>
 
 </body>
 </html>
