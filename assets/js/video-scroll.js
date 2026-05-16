@@ -1,48 +1,99 @@
 /* ═══════════════════════════════════════════════════════
-   VIDEO SCROLL – Scroll-driven video scrubbing
+   VIDEO SCROLL – Wheel-driven video scrubbing + scroll lock
    ═══════════════════════════════════════════════════════ */
 
 (function () {
-  var video   = document.getElementById('heroVideo');
-  var wrapper = document.getElementById('hero');
+  var video = document.getElementById('heroVideo');
+  if (!video) return;
 
-  if (!video || !wrapper) return;
+  var reduced   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isDesktop = window.innerWidth >= 860;
 
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* Reduced motion: jump to last frame, done */
+  /* ── Reduced motion: jump straight to end ─────────── */
   if (reduced) {
     video.addEventListener('loadedmetadata', function () {
       video.currentTime = video.duration;
     });
+    video.load();
     return;
   }
 
-  var duration = 0;
-  var ticking  = false;
-
-  function updateFrame () {
-    var rect     = wrapper.getBoundingClientRect();
-    var scrolled = -rect.top;
-    var total    = rect.height - window.innerHeight;
-    var progress = Math.max(0, Math.min(1, scrolled / total));
-    video.currentTime = progress * duration;
-    ticking = false;
+  /* ── Mobile: just show video, no scroll lock ──────── */
+  if (!isDesktop) {
+    video.load();
+    return;
   }
 
-  function onScroll () {
-    if (!ticking) {
-      requestAnimationFrame(updateFrame);
-      ticking = true;
-    }
+  /* ══════════════════════════════════════════════════
+     DESKTOP – wheel-event interception
+     ══════════════════════════════════════════════════ */
+
+  var locked       = true;
+  var pendingDelta = 0;
+  var rafId        = null;
+  var duration     = 0;
+
+  /* Lock body scroll on load */
+  document.body.style.overflow = 'hidden';
+
+  function unlock () {
+    locked = false;
+    document.body.style.overflow = '';
   }
 
-  video.addEventListener('loadedmetadata', function () {
-    duration = video.duration;
-    updateFrame();
-    window.addEventListener('scroll', onScroll, { passive: true });
+  function relock () {
+    locked       = true;
+    pendingDelta = 0;
+    document.body.style.overflow = 'hidden';
+    if (duration) video.currentTime = 0;
+  }
+
+  function processFrame () {
+    rafId = null;
+    if (!locked || !duration) return;
+
+    /* Map wheel delta → seconds (600 = comfortable scroll speed) */
+    var dt = pendingDelta / 600;
+    pendingDelta = 0;
+
+    var next = Math.max(0, Math.min(duration, video.currentTime + dt));
+    video.currentTime = next;
+
+    if (next >= duration) unlock();
+  }
+
+  /* Wheel – intercept while locked */
+  window.addEventListener('wheel', function (e) {
+    if (!locked) return;
+    e.preventDefault();
+    pendingDelta += e.deltaY;
+    if (!rafId) rafId = requestAnimationFrame(processFrame);
+  }, { passive: false });
+
+  /* Keyboard – arrow / space / page */
+  window.addEventListener('keydown', function (e) {
+    if (!locked) return;
+    var step = 0;
+    if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') step =  0.4;
+    if (e.key === 'ArrowUp'   || e.key === 'PageUp')                    step = -0.4;
+    if (!step) return;
+    e.preventDefault();
+    if (!duration) return;
+    var next = Math.max(0, Math.min(duration, video.currentTime + step));
+    video.currentTime = next;
+    if (next >= duration) unlock();
   });
 
-  /* Preload trigger – needed on some browsers */
+  /* Re-lock when user scrolls back to top */
+  window.addEventListener('scroll', function () {
+    if (!locked && window.scrollY === 0) relock();
+  }, { passive: true });
+
+  /* Init video */
+  video.addEventListener('loadedmetadata', function () {
+    duration = video.duration;
+    video.currentTime = 0;
+  });
+
   video.load();
 })();
