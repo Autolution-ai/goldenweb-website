@@ -2163,9 +2163,13 @@ html, body {
 }
 
 .team-member__photo--hannes img {
-  object-position: center 8%;
-  transform: scale(1.9);
-  transform-origin: center 18%;
+  transform: scale(2.1);
+  transform-origin: center 38%;
+}
+
+.team-member__photo--jonas img {
+  transform: scale(1.5);
+  transform-origin: center 30%;
 }
 
 .team-member__placeholder {
