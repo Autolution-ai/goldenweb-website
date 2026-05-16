@@ -152,19 +152,12 @@ html, body {
    ════════════════════════════════════════ */
 .hero {
   position: relative;
-  height: 350vh; /* tall scroll container – video plays as you scroll */
-}
-
-@media (max-width: 859px) {
-  .hero {
-    height: auto; /* mobile: normal flow */
-  }
+  width: 100%;
 }
 
 .hero__sticky {
-  position: sticky;
-  top: 0;
-  height: 100svh;
+  position: relative;
+  min-height: 100svh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
