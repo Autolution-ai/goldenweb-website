@@ -64,6 +64,7 @@
          HERO
          ══════════════════════════════════════ -->
     <section class="hero" id="hero" aria-label="Hero">
+      <div class="hero__sticky">
       <div class="hero__glow hero-glow-pulse" aria-hidden="true"></div>
       <div class="hero__grid" aria-hidden="true"></div>
 
@@ -106,136 +107,24 @@
         <!-- RIGHT: 3D Scene -->
         <div class="hero__scene fade-up stagger-2" id="heroScene" aria-hidden="true">
 
-          <!-- Code Rain Background -->
-          <div class="code-rain">
-            <div class="code-rain__col">
-              <pre>.anfragen {
-  automation: true;
-  speed: instant;
-  lost-leads: 0;
-}
-
-&lt;hero&gt;
-  &lt;h1&gt;Mehr Kunden.
-  Automatisch.&lt;/h1&gt;
-  &lt;cta&gt;Starten&lt;/cta&gt;
-&lt;/hero&gt;
-
-.conversion {
-  vorher: 0.8%;
-  nachher: 4.2%;
-  delta: +425%;
-}
-
-function onLead(d) {
-  crm.add(d);
-  team.notify();
-  // 0 missed
-}
-
-.website {
-  seo: local;
-  speed: 98/100;
-  mobile: true;
-}
-
-&lt;nav class="gw"&gt;
-  &lt;a&gt;Leistungen&lt;/a&gt;
-  &lt;a&gt;Kontakt&lt;/a&gt;
-&lt;/nav&gt;.anfragen {
-  automation: true;
-  speed: instant;
-  lost-leads: 0;
-}
-
-&lt;hero&gt;
-  &lt;h1&gt;Mehr Kunden.
-  Automatisch.&lt;/h1&gt;
-  &lt;cta&gt;Starten&lt;/cta&gt;
-&lt;/hero&gt;
-
-.conversion {
-  vorher: 0.8%;
-  nachher: 4.2%;
-  delta: +425%;
-}
-
-function onLead(d) {
-  crm.add(d);
-  team.notify();
-  // 0 missed
-}
-
-.website {
-  seo: local;
-  speed: 98/100;
-  mobile: true;
-}
-
-&lt;nav class="gw"&gt;
-  &lt;a&gt;Leistungen&lt;/a&gt;
-  &lt;a&gt;Kontakt&lt;/a&gt;
-&lt;/nav&gt;</pre>
-            </div>
-            <div class="code-rain__col code-rain__col--offset">
-              <pre>async function go() {
-  const lead =
-    await chat.get();
-  await crm.sync(lead);
-  return 'delivered';
-}
-
-.uptime: 24/7;
-.support: direkt;
-.garantie: 100%;
-
-&lt;section id="sys"&gt;
-  &lt;chatbot on /&gt;
-  &lt;speed-to-lead /&gt;
-  &lt;crm linked /&gt;
-&lt;/section&gt;
-
-.goldenweb {
-  builds: websites;
-  adds: chatbot;
-  result: leads++;
-}
-
-const system = {
-  website: true,
-  ki: active,
-  crm: synced,
-  // 24/7
-};async function go() {
-  const lead =
-    await chat.get();
-  await crm.sync(lead);
-  return 'delivered';
-}
-
-.uptime: 24/7;
-.support: direkt;
-.garantie: 100%;
-
-&lt;section id="sys"&gt;
-  &lt;chatbot on /&gt;
-  &lt;speed-to-lead /&gt;
-  &lt;crm linked /&gt;
-&lt;/section&gt;
-
-.goldenweb {
-  builds: websites;
-  adds: chatbot;
-  result: leads++;
-}
-
-const system = {
-  website: true,
-  ki: active,
-  crm: synced,
-  // 24/7
-};</pre>
-            </div>
+          <!-- Code Panel (scroll-driven animation) -->
+          <div class="code-panel" id="codePanel">
+            <div class="code-panel__line" data-dx="-1.4" data-dy="-0.8"><span class="cp-sel">.anfragen</span> <span class="cp-brace">{</span></div>
+            <div class="code-panel__line" data-dx="0.5" data-dy="-1.6"><span class="cp-ind">  </span><span class="cp-prop">automation</span><span class="cp-colon">:</span> <span class="cp-val">true</span><span class="cp-semi">;</span></div>
+            <div class="code-panel__line" data-dx="1.6" data-dy="-0.4"><span class="cp-ind">  </span><span class="cp-prop">lost-leads</span><span class="cp-colon">:</span> <span class="cp-num">0</span><span class="cp-semi">;</span></div>
+            <div class="code-panel__line" data-dx="-0.7" data-dy="1.3"><span class="cp-brace">}</span></div>
+            <div class="code-panel__line code-panel__line--blank" data-dx="0" data-dy="0">&nbsp;</div>
+            <div class="code-panel__line" data-dx="1.2" data-dy="0.9"><span class="cp-kw">function</span> <span class="cp-fn">onLead</span><span class="cp-paren">(d)</span> <span class="cp-brace">{</span></div>
+            <div class="code-panel__line" data-dx="-0.4" data-dy="-1.9"><span class="cp-ind">  </span><span class="cp-obj">crm</span><span class="cp-dot">.</span><span class="cp-fn">add</span><span class="cp-paren">(d)</span><span class="cp-semi">;</span></div>
+            <div class="code-panel__line" data-dx="0.8" data-dy="1.7"><span class="cp-ind">  </span><span class="cp-obj">team</span><span class="cp-dot">.</span><span class="cp-fn">notify</span><span class="cp-paren">()</span><span class="cp-semi">;</span></div>
+            <div class="code-panel__line" data-dx="-1.8" data-dy="0.2"><span class="cp-brace">}</span></div>
+            <div class="code-panel__line code-panel__line--blank" data-dx="0" data-dy="0">&nbsp;</div>
+            <div class="code-panel__line" data-dx="1.0" data-dy="-1.3"><span class="cp-sel">.website</span> <span class="cp-brace">{</span></div>
+            <div class="code-panel__line" data-dx="-1.6" data-dy="0.7"><span class="cp-ind">  </span><span class="cp-prop">conversion</span><span class="cp-colon">:</span> <span class="cp-str">+340%</span><span class="cp-semi">;</span></div>
+            <div class="code-panel__line" data-dx="1.5" data-dy="1.4"><span class="cp-ind">  </span><span class="cp-prop">speed</span><span class="cp-colon">:</span> <span class="cp-num">98/100</span><span class="cp-semi">;</span></div>
+            <div class="code-panel__line" data-dx="-0.9" data-dy="-0.6"><span class="cp-brace">}</span></div>
+            <div class="code-panel__line code-panel__line--blank" data-dx="0" data-dy="0">&nbsp;</div>
+            <div class="code-panel__line" data-dx="0.3" data-dy="1.9"><span class="cp-comment">// 0 Leads verloren · automatisch</span></div>
           </div>
 
           <!-- 3D UI Card Stack -->
@@ -330,6 +219,7 @@ const system = {
           <span class="marquee__chip">Fahrschule</span>
         </div>
       </div>
+      </div><!-- /.hero__sticky -->
     </section>
 
     <!-- ══════════════════════════════════════
@@ -337,11 +227,11 @@ const system = {
          ══════════════════════════════════════ -->
     <section class="section-zahlen section" id="zahlen" aria-label="Zahlen und Fakten">
       <div class="container">
-        <p class="eyebrow" style="text-align:center; margin-bottom: var(--space-10);">Bereits vertrauen uns</p>
+        <p class="eyebrow" style="text-align:center; margin-bottom: var(--space-10);">Was bisher passiert ist</p>
         <div class="stats-grid">
           <div class="stat-card fade-up">
-            <div class="stat-number" data-target="340" data-suffix="%">0%</div>
-            <div class="stat-label">Mehr Anfragen<br>im Schnitt</div>
+            <div class="stat-number" data-target="15" data-prefix="+" data-suffix="">0</div>
+            <div class="stat-label">Anfragen mehr<br>im Schnitt pro Monat</div>
           </div>
           <div class="stat-card fade-up stagger-1">
             <div class="stat-number" data-target="30" data-suffix=" Tage">0 Tage</div>
@@ -349,21 +239,11 @@ const system = {
           </div>
           <div class="stat-card fade-up stagger-2">
             <div class="stat-number" data-target="50" data-prefix="+" data-suffix="">0</div>
-            <div class="stat-label">Betriebe<br>erfolgreich umgesetzt</div>
+            <div class="stat-label">Zufriedene<br>Zusammenarbeiten</div>
           </div>
           <div class="stat-card fade-up stagger-3">
             <div class="stat-number" data-target="100" data-suffix="%">0%</div>
             <div class="stat-label">Zufriedenheits-<br>garantie</div>
-          </div>
-        </div>
-
-        <div class="logo-row fade-up">
-          <div class="logo-badge logo-badge--active">
-            <span class="logo-badge__dot"></span>
-            <span><strong>Belitz</strong> Unternehmensgruppe – aktuell in Umsetzung</span>
-          </div>
-          <div class="logo-badge">
-            <span style="color: var(--color-text-tertiary); font-size: var(--text-xs);">Dein Unternehmen?</span>
           </div>
         </div>
       </div>
@@ -374,29 +254,37 @@ const system = {
          ══════════════════════════════════════ -->
     <section class="section-problem section" id="problem" aria-label="Das Problem">
       <div class="container">
-        <span class="eyebrow fade-up">Das Problem</span>
-        <div class="problem__content">
-          <span class="problem__line fade-up stagger-1">Deine Konkurrenz ist schon online.<br>Du noch nicht.</span>
+        <span class="eyebrow fade-up">Warum das wichtig ist</span>
 
-          <div class="problem__spacer"></div>
+        <h2 class="problem__headline fade-up stagger-1">
+          Jeden Tag gehen Aufträge verloren.<br>
+          <span class="text-gold">Ohne dass du es weißt.</span>
+        </h2>
 
-          <span class="problem__line problem__line--muted fade-up stagger-2">Du machst gute Arbeit.</span>
-          <span class="problem__line problem__line--muted fade-up stagger-3">Deine Kunden sind zufrieden.</span>
+        <div class="problem__cards">
+          <div class="problem__card fade-up stagger-1">
+            <div class="problem__card-num">01</div>
+            <h3 class="problem__card-title">Unsichtbar bei der Suche</h3>
+            <p class="problem__card-desc">Täglich suchen Menschen in deiner Stadt nach deinen Leistungen. Wer nicht auf Seite 1 steht, existiert nicht. Deine Konkurrenz tut es — du noch nicht.</p>
+          </div>
 
-          <div class="problem__spacer"></div>
+          <div class="problem__card fade-up stagger-2">
+            <div class="problem__card-num">02</div>
+            <h3 class="problem__card-title">Zu spät zurückgemeldet</h3>
+            <p class="problem__card-desc">Eine Anfrage kommt rein — du siehst sie Stunden später. Bis dahin hat der Interessent schon drei andere angeschrieben. Wer zuerst antwortet, bekommt den Auftrag.</p>
+          </div>
 
-          <span class="problem__line fade-up stagger-1">Aber wenn jemand googelt<br>findet er dich nicht.</span>
-
-          <div class="problem__spacer"></div>
-
-          <span class="problem__line problem__line--muted fade-up stagger-2">Stattdessen: die Konkurrenz.</span>
-          <span class="problem__line problem__line--muted fade-up stagger-3">Mit einer besseren Website.</span>
-          <span class="problem__line problem__line--muted fade-up stagger-4">Und deinen potenziellen Kunden.</span>
-
-          <div class="problem__spacer"></div>
-
-          <span class="problem__line problem__line--accent fade-up stagger-1">Am Ende gewinnt nicht der Beste.<br>Sondern der Sichtbarste.</span>
+          <div class="problem__card fade-up stagger-3">
+            <div class="problem__card-num">03</div>
+            <h3 class="problem__card-title">Kein System dahinter</h3>
+            <p class="problem__card-desc">Anfragen kommen per Telefon, WhatsApp, E-Mail, Formular. Nichts ist gebündelt. Nichts ist nachverfolgbar. Leads fallen durch — und du merkst es erst, wenn es zu spät ist.</p>
+          </div>
         </div>
+
+        <p class="problem__close fade-up">
+          Das ist kein Einzelfall. Das ist der Alltag der meisten Betriebe.<br>
+          <span class="text-gold">Und genau hier setzen wir an.</span>
+        </p>
       </div>
     </section>
 
@@ -427,7 +315,6 @@ const system = {
               <li>Individuelles Design, kein Template</li>
               <li>Lokal SEO-optimiert für deine Region</li>
               <li>Mobiloptimiert, lädt in unter 2 Sekunden</li>
-              <li>Hosting und Domain inklusive</li>
               <li>Einmalige Freigabe, dann live</li>
             </ul>
           </div>
@@ -454,8 +341,8 @@ const system = {
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                 </svg>
               </div>
-              <h3 class="service-card__title">Speed-to-Lead</h3>
-              <p class="service-card__desc">Automatischer Sofort-Rückruf bei neuen Anfragen. Wer zuerst antwortet, gewinnt den Auftrag.</p>
+              <h3 class="service-card__title">Sofort-Reaktion</h3>
+              <p class="service-card__desc">Neue Anfragen werden automatisch weitergeleitet und sofort bearbeitet. Per WhatsApp, E-Mail oder intern — bevor die Konkurrenz überhaupt den Namen kennt.</p>
             </div>
 
             <div class="service-card fade-up stagger-3">
@@ -468,6 +355,19 @@ const system = {
               </div>
               <h3 class="service-card__title">CRM-Integration</h3>
               <p class="service-card__desc">Alle Anfragen zentral, organisiert und nachverfolgbar. Kein Lead geht verloren.</p>
+            </div>
+
+            <div class="service-card service-card--new fade-up stagger-4">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                  <path d="M2 12h20"/>
+                </svg>
+              </div>
+              <div class="service-card__badge">Neu & wichtiger denn je</div>
+              <h3 class="service-card__title">KI-Sichtbarkeit</h3>
+              <p class="service-card__desc">ChatGPT, Perplexity und Co. beantworten Suchanfragen direkt — ohne Google. Wer dort nicht vorkommt, verliert. Wir optimieren deine Website auch für KI-Suchmaschinen.</p>
             </div>
 
           </div>
@@ -489,76 +389,89 @@ const system = {
          ══════════════════════════════════════ -->
     <section class="section-team section" id="ueber-uns" aria-label="Über uns">
       <div class="container">
-        <div class="team-layout">
 
-          <div class="team-text fade-up">
-            <span class="eyebrow">Wer steckt dahinter</span>
-            <h2 class="team-headline">Hannes und Jonas.<br>Unternehmer wie du.</h2>
-            <p class="team-desc">
-              Wir sind keine große Agentur mit Hochglanz-Präsentationen. Wir sind zwei Unternehmer, die selbst wissen, was es bedeutet, einen Betrieb aufzubauen.
-            </p>
-            <p class="team-desc">
-              Über unsere Schwestermarke GoldenPost begleiten wir bereits 50+ lokale Betriebe dabei, online sichtbar zu werden. Mit Content, Social Media und Strategie. GoldenWeb ist der nächste Schritt: das digitale Fundament, auf dem alles aufbaut.
-            </p>
-            <div class="team-trust">
-              <div class="team-trust-item">
-                <span class="team-trust-number">50+</span>
-                <span class="team-trust-label">Betriebe begleitet</span>
-              </div>
-              <div class="team-trust-item">
-                <span class="team-trust-number">7-stellig</span>
-                <span class="team-trust-label">Umsätze für Kunden</span>
-              </div>
-              <div class="team-trust-item">
-                <span class="team-trust-number">2</span>
-                <span class="team-trust-label">Direkte Ansprechpartner</span>
+        <div class="team-header fade-up">
+          <span class="eyebrow">Wer steckt dahinter</span>
+          <h2 class="team-headline">Drei Unternehmer.<br>Eine gemeinsame Idee.</h2>
+          <p class="team-intro">
+            Keine Agentur im klassischen Sinne. Kein anonymes Team im Hintergrund. Wir kennen das Spiel von beiden Seiten — und haben GoldenWeb genau deshalb gebaut.
+          </p>
+        </div>
+
+        <div class="team-story fade-up stagger-1">
+          <p>
+            Hannes und Jonas kommen aus dem Social Media und Marketing. Mit ihrer Marke <a href="https://goldenpost.media/home" target="_blank" rel="noopener" class="team-story__link">GoldenPost</a> begleiten sie seit Jahren über 50 lokale Betriebe dabei, online sichtbar zu werden — mit Content, Strategie und Reichweite. Sie wissen genau, wie Aufmerksamkeit entsteht und wie man sie in echte Kunden verwandelt.
+          </p>
+          <p>
+            Bruno bringt die technische Seite. Mit seinem Hintergrund in KI-Automatisierung und Systemintegration baut er die Infrastruktur, die im Hintergrund läuft: Systeme, die Anfragen automatisch weiterleiten, Leads strukturieren und dafür sorgen, dass kein potenzieller Kunde verloren geht.
+          </p>
+          <p>
+            Aus dieser Kombination ist GoldenWeb entstanden. Das Marketing-Know-how und das Gespür für lokale Märkte auf der einen Seite — die technische Infrastruktur und Automatisierung auf der anderen. Zusammen bauen wir nicht nur Websites. Wir bauen Systeme, die wirklich arbeiten.
+          </p>
+        </div>
+
+        <div class="team-members fade-up stagger-2">
+
+          <div class="team-member">
+            <div class="team-member__photo">
+              <div class="team-member__placeholder" aria-label="Foto Hannes">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
               </div>
             </div>
-
-            <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--ghost" style="margin-top: var(--space-8);">
-              Persönlich kennenlernen
-            </a>
+            <div class="team-member__info">
+              <span class="team-member__name">Hannes</span>
+              <span class="team-member__role">Strategie & Marketing</span>
+              <span class="team-member__focus">GoldenPost · Social Media · Wachstum</span>
+            </div>
           </div>
 
-          <div class="team-photos fade-up stagger-2">
-            <div class="team-member">
-              <div class="team-member__photo">
-                <div class="team-member__placeholder" aria-label="Foto Hannes">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                  </svg>
-                </div>
-              </div>
-              <div class="team-member__info">
-                <span class="team-member__name">Hannes</span>
-                <span class="team-member__role">Technik & Umsetzung</span>
+          <div class="team-member">
+            <div class="team-member__photo">
+              <div class="team-member__placeholder" aria-label="Foto Jonas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
               </div>
             </div>
+            <div class="team-member__info">
+              <span class="team-member__name">Jonas</span>
+              <span class="team-member__role">Kundenbeziehungen & Content</span>
+              <span class="team-member__focus">GoldenPost · Lokale Märkte · Kunden</span>
+            </div>
+          </div>
 
-            <div class="team-member">
-              <div class="team-member__photo">
-                <div class="team-member__placeholder" aria-label="Foto Jonas">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                  </svg>
-                </div>
-              </div>
-              <div class="team-member__info">
-                <span class="team-member__name">Jonas</span>
-                <span class="team-member__role">Strategie & Kunden</span>
+          <div class="team-member">
+            <div class="team-member__photo">
+              <div class="team-member__placeholder" aria-label="Foto Bruno">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
               </div>
             </div>
-
-            <div class="team-sister-badge">
-              <span class="team-sister-badge__label">Schwestermarke</span>
-              <a href="https://goldenpost.media/home" target="_blank" rel="noopener" class="team-sister-badge__brand">GoldenPost</a>
-              <span class="team-sister-badge__sub">Content Marketing für KMUs</span>
+            <div class="team-member__info">
+              <span class="team-member__name">Bruno</span>
+              <span class="team-member__role">Technik & Automatisierung</span>
+              <span class="team-member__focus">KI-Systeme · Automatisierung · Backend</span>
             </div>
           </div>
 
         </div>
+
+        <div class="team-cta fade-up stagger-3">
+          <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--ghost">
+            Persönlich kennenlernen
+          </a>
+          <span class="team-sister">
+            Content & Social Media? →
+            <a href="https://goldenpost.media/home" target="_blank" rel="noopener">GoldenPost</a>
+          </span>
+        </div>
+
       </div>
     </section>
 
