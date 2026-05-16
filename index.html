@@ -104,88 +104,18 @@
           </div>
         </div>
 
-        <!-- RIGHT: 3D Scene -->
-        <div class="hero__scene fade-up stagger-2" id="heroScene" aria-hidden="true">
-
-          <!-- Code Panel (scroll-driven animation) -->
-          <div class="code-panel" id="codePanel">
-            <div class="code-panel__line" data-dx="-1.4" data-dy="-0.8"><span class="cp-sel">.anfragen</span> <span class="cp-brace">{</span></div>
-            <div class="code-panel__line" data-dx="0.5" data-dy="-1.6"><span class="cp-ind">  </span><span class="cp-prop">automation</span><span class="cp-colon">:</span> <span class="cp-val">true</span><span class="cp-semi">;</span></div>
-            <div class="code-panel__line" data-dx="1.6" data-dy="-0.4"><span class="cp-ind">  </span><span class="cp-prop">lost-leads</span><span class="cp-colon">:</span> <span class="cp-num">0</span><span class="cp-semi">;</span></div>
-            <div class="code-panel__line" data-dx="-0.7" data-dy="1.3"><span class="cp-brace">}</span></div>
-            <div class="code-panel__line code-panel__line--blank" data-dx="0" data-dy="0">&nbsp;</div>
-            <div class="code-panel__line" data-dx="1.2" data-dy="0.9"><span class="cp-kw">function</span> <span class="cp-fn">onLead</span><span class="cp-paren">(d)</span> <span class="cp-brace">{</span></div>
-            <div class="code-panel__line" data-dx="-0.4" data-dy="-1.9"><span class="cp-ind">  </span><span class="cp-obj">crm</span><span class="cp-dot">.</span><span class="cp-fn">add</span><span class="cp-paren">(d)</span><span class="cp-semi">;</span></div>
-            <div class="code-panel__line" data-dx="0.8" data-dy="1.7"><span class="cp-ind">  </span><span class="cp-obj">team</span><span class="cp-dot">.</span><span class="cp-fn">notify</span><span class="cp-paren">()</span><span class="cp-semi">;</span></div>
-            <div class="code-panel__line" data-dx="-1.8" data-dy="0.2"><span class="cp-brace">}</span></div>
-            <div class="code-panel__line code-panel__line--blank" data-dx="0" data-dy="0">&nbsp;</div>
-            <div class="code-panel__line" data-dx="1.0" data-dy="-1.3"><span class="cp-sel">.website</span> <span class="cp-brace">{</span></div>
-            <div class="code-panel__line" data-dx="-1.6" data-dy="0.7"><span class="cp-ind">  </span><span class="cp-prop">conversion</span><span class="cp-colon">:</span> <span class="cp-str">+340%</span><span class="cp-semi">;</span></div>
-            <div class="code-panel__line" data-dx="1.5" data-dy="1.4"><span class="cp-ind">  </span><span class="cp-prop">speed</span><span class="cp-colon">:</span> <span class="cp-num">98/100</span><span class="cp-semi">;</span></div>
-            <div class="code-panel__line" data-dx="-0.9" data-dy="-0.6"><span class="cp-brace">}</span></div>
-            <div class="code-panel__line code-panel__line--blank" data-dx="0" data-dy="0">&nbsp;</div>
-            <div class="code-panel__line" data-dx="0.3" data-dy="1.9"><span class="cp-comment">// 0 Leads verloren · automatisch</span></div>
-          </div>
-
-          <!-- 3D UI Card Stack -->
-          <div class="ui-stack" id="uiStack">
-
-            <!-- Nav bar card -->
-            <div class="ui-card ui-card--nav">
-              <div class="ui-card__dots" aria-hidden="true">
-                <span></span><span></span><span></span>
-              </div>
-              <div class="ui-card__nav-links">
-                <span>Leistungen</span>
-                <span>Referenzen</span>
-                <span>FAQ</span>
-              </div>
-              <div class="ui-card__nav-cta">Anfragen</div>
-            </div>
-
-            <!-- Main hero card -->
-            <div class="ui-card ui-card--main">
-              <span class="ui-card__eyebrow">Handwerk & Service</span>
-              <div class="ui-card__big-number">+340<span>%</span></div>
-              <p class="ui-card__label">Mehr Anfragen im Schnitt</p>
-              <div class="ui-card__divider"></div>
-              <div class="ui-card__metrics">
-                <div class="ui-card__metric">
-                  <span class="ui-card__metric-val">30</span>
-                  <span class="ui-card__metric-key">Tage bis Launch</span>
-                </div>
-                <div class="ui-card__metric">
-                  <span class="ui-card__metric-val">24/7</span>
-                  <span class="ui-card__metric-key">Online</span>
-                </div>
-                <div class="ui-card__metric">
-                  <span class="ui-card__metric-val">0</span>
-                  <span class="ui-card__metric-key">Leads verloren</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Stats strip card -->
-            <div class="ui-card ui-card--stats">
-              <div class="ui-card__bar">
-                <span class="ui-card__bar-label">Conversion Rate</span>
-                <span class="ui-card__bar-val">4.2%</span>
-              </div>
-              <div class="ui-card__bar-track">
-                <div class="ui-card__bar-fill"></div>
-              </div>
-            </div>
-
-            <!-- Notification badge -->
-            <div class="ui-card ui-card--notif">
-              <div class="ui-card__notif-dot"></div>
-              <div class="ui-card__notif-text">
-                <span class="ui-card__notif-title">Neue Anfrage</span>
-                <span class="ui-card__notif-sub">KFZ Schwanke · gerade eben</span>
-              </div>
-            </div>
-
-          </div>
+        <!-- RIGHT: Scroll-driven Video -->
+        <div class="hero__scene fade-up stagger-2" aria-hidden="true">
+          <video
+            id="heroVideo"
+            class="hero__video"
+            muted
+            playsinline
+            preload="auto"
+            disablepictureinpicture
+          >
+            <source src="assets/media/hero-animation.mp4" type="video/mp4">
+          </video>
         </div>
 
       </div>
@@ -868,7 +798,7 @@
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/accordion.js" defer></script>
   <script src="assets/js/slider.js" defer></script>
-  <script src="assets/js/hero3d.js" defer></script>
+  <script src="assets/js/video-scroll.js" defer></script>
 
 </body>
 </html>
