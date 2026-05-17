@@ -61,325 +61,40 @@
   <main>
 
     <!-- ══════════════════════════════════════
-         HERO – ANIMATION
+         HERO
          ══════════════════════════════════════ -->
     <section class="hero" id="hero" aria-label="Hero">
-      <div class="anim-stage" id="animStage">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__glow"></div>
+        <div class="hero__grid"></div>
+      </div>
 
-        <!-- ─ LAYER 1: TERMINAL / STARTFRAME ─ -->
-        <div class="anim-layer anim-layer--start" id="layerStart" aria-hidden="true">
-          <div class="anim-terminal">
-
-            <header class="anim-shell-head">
-              <span class="sh-dot"></span>
-              <span>~/projects/<span class="sh-path">goldenweb</span></span>
-              <span>&middot;</span>
-              <span>tree -L 2</span>
-            </header>
-
-            <pre class="anim-code-root">goldenweb/</pre>
-
-            <div class="anim-code-group" data-id="nav">
-              <pre class="anim-tree">&#x251C;&#x2500;&#x2500; <span>nav/</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; logo.tsx          <span class="tc"># GoldenWeb</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; leistungen.tsx
-&#x2502;   &#x251C;&#x2500;&#x2500; referenzen.tsx
-&#x2502;   &#x251C;&#x2500;&#x2500; ueber-uns.tsx
-&#x2502;   &#x251C;&#x2500;&#x2500; faq.tsx
-&#x2502;   &#x2514;&#x2500;&#x2500; kontakt.tsx       <span class="tc"># btn--primary</span></pre>
-            </div>
-
-            <div class="anim-group-gap-md"></div>
-
-            <div class="anim-code-group" data-id="hero">
-              <pre class="anim-tree">&#x251C;&#x2500;&#x2500; <span>hero/</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; kicker.tsx              <span class="tc"># "Webdesign f&#xFC;r Handwerker"</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; headline.tsx            <span class="tc"># "Deine Website arbeitet <span class="tg">24/7</span>"</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; subline.tsx             <span class="tc"># System aus Website + KI + CRM</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; cta-primary.tsx         <span class="tc"># "Kostenloses Erstgespr&#xE4;ch &#x2192;"</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; cta-secondary.tsx       <span class="tc"># "Referenzen ansehen"</span>
-&#x2502;   &#x2514;&#x2500;&#x2500; trust.tsx               <span class="tc"># Kein Vorwissen &middot; 30 Tage &middot; Garantie</span></pre>
-            </div>
-
-            <div class="anim-group-gap-lg"></div>
-
-            <div class="anim-code-group" data-id="system">
-              <pre class="anim-tree">&#x251C;&#x2500;&#x2500; <span>prozess/</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; headline.tsx
-&#x2502;   &#x251C;&#x2500;&#x2500; <span class="tg">01</span>_gespraech.tsx       <span class="tc"># 15 Min &middot; unverbindlich</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; <span class="tg">02</span>_demo.tsx            <span class="tc"># Kostenloser Erstentwurf</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; <span class="tg">03</span>_umsetzung.tsx       <span class="tc"># Design + Entwicklung</span>
-&#x2502;   &#x2514;&#x2500;&#x2500; <span class="tg">04</span>_live-gang.tsx       <span class="tc"># Live + Anfragen rein</span></pre>
-            </div>
-
-            <div class="anim-group-gap-md"></div>
-
-            <div class="anim-code-group" data-id="pakete">
-              <pre class="anim-tree">&#x251C;&#x2500;&#x2500; <span>pakete/</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; starter.tsx             <span class="tc"># ab 2.500 &#x20AC;</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; growth.tsx              <span class="tc"># ab 4.500 &#x20AC; &middot; beliebteste Wahl</span>
-&#x2502;   &#x2514;&#x2500;&#x2500; system.tsx              <span class="tc"># ab 6.000 &#x20AC; + Retainer</span></pre>
-            </div>
-
-            <div class="anim-group-gap-sm"></div>
-
-            <div class="anim-code-group" data-id="referenzen">
-              <pre class="anim-tree">&#x251C;&#x2500;&#x2500; <span>referenzen/</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; belitz.tsx              <span class="tc"># Elektro &middot; Live</span>
-&#x2502;   &#x251C;&#x2500;&#x2500; demo-elektro.tsx        <span class="tc"># +18 Anfragen / Monat</span>
-&#x2502;   &#x2514;&#x2500;&#x2500; demo-physio.tsx         <span class="tc"># +220% organischer Traffic</span></pre>
-            </div>
-
-            <div class="anim-group-gap-sm"></div>
-
-            <div class="anim-code-group" data-id="footer">
-              <pre class="anim-tree">&#x251C;&#x2500;&#x2500; faq.tsx
-&#x251C;&#x2500;&#x2500; kontakt.tsx
-&#x2514;&#x2500;&#x2500; <span>assets/</span>
-    &#x251C;&#x2500;&#x2500; css/              <span class="tc"># design-system &middot; components</span>
-    &#x251C;&#x2500;&#x2500; js/               <span class="tc"># animations &middot; carousel</span>
-    &#x2514;&#x2500;&#x2500; media/            <span class="tc"># team-fotos &middot; frames/</span></pre>
-            </div>
-
-            <div class="anim-prompt" aria-hidden="true">
-              <span>&gt;</span>
-              <span class="anim-cursor"></span>
-            </div>
-
-            <footer class="anim-status">
-              <span class="anim-status-pill">build: ready</span>
-              <span>fonts: Syne &middot; Inter &middot; JetBrains&nbsp;Mono</span>
-              <span>palette: gold #C8A96E &middot; dark #0C0B09</span>
-            </footer>
-
-          </div>
+      <div class="hero__content container fade-up">
+        <div class="hero__kicker">
+          <span class="hero__kicker-dot"></span>
+          Webdesign für Handwerker &amp; lokale Dienstleister
         </div>
-
-        <!-- ─ LAYER 2: ENDFRAME / WEBSITE MOCKUP ─ -->
-        <div class="anim-layer anim-layer--end" id="layerEnd" aria-hidden="true">
-          <div id="efFrameWrap">
-            <div class="ef-frame">
-              <div class="ef-float f1"></div>
-              <div class="ef-float f2"></div>
-              <div class="ef-float f3"></div>
-
-              <!-- Nav -->
-              <nav class="end-nav">
-                <a href="#" class="ef-logo">
-                  <div class="ef-logo-mark">G</div>
-                  <span>GoldenWeb</span>
-                </a>
-                <div class="ef-nav-pill">
-                  <a href="#">Leistungen</a>
-                  <a href="#">Referenzen</a>
-                  <a href="#">Über uns</a>
-                  <a href="#">FAQ</a>
-                  <a href="#" class="ef-nav-cta">Erstgespräch buchen</a>
-                </div>
-              </nav>
-
-              <!-- Hero -->
-              <section class="end-hero-s">
-                <div class="ef-eyebrow">
-                  <span class="ef-dot"></span>
-                  Webdesign für lokale Dienstleister
-                </div>
-                <h2 class="ef-h1">Deine Website arbeitet <em>24/7,</em><br>damit du es nicht mehr musst.</h2>
-                <p class="ef-sub">Wir bauen ein System aus Website, KI und Automatisierung, das planbar neue Anfragen bringt. Für Handwerker und lokale Dienstleister. Deutschlandweit.</p>
-                <div class="ef-cta-row">
-                  <a href="#" class="ef-btn-primary">
-                    Kostenloses Erstgespräch
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                  </a>
-                  <a href="#" class="ef-btn-secondary">Referenzen ansehen</a>
-                </div>
-                <div class="ef-micro">
-                  <span><span class="ef-check">✓</span> Kein technisches Vorwissen</span>
-                  <span><span class="ef-check">✓</span> Fertig in 30 Tagen</span>
-                  <span><span class="ef-check">✓</span> Geld-zurück-Garantie</span>
-                </div>
-              </section>
-
-              <!-- Process -->
-              <div class="end-process">
-                <div class="ef-section-label">Unser Prozess</div>
-                <div class="ef-section-h">
-                  <h2>In vier Schritten zur Website.</h2>
-                  <p>Dein Zeitaufwand: ca. 2 bis 3 Stunden. Den Rest übernehmen wir.</p>
-                </div>
-                <div class="ef-steps-grid">
-                  <!-- Step 01 -->
-                  <article class="ef-step-card">
-                    <div class="ef-step-img">
-                      <svg class="ef-step-illu" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="300" fill="#F2EAD8"/>
-                        <ellipse cx="200" cy="120" rx="160" ry="100" fill="rgba(201,163,94,0.10)"/>
-                        <rect x="40" y="30" width="320" height="210" rx="14" fill="#1A1814" opacity="0.96"/>
-                        <rect x="40" y="30" width="320" height="32" rx="14" fill="#252119"/>
-                        <rect x="40" y="44" width="320" height="18" fill="#252119"/>
-                        <circle cx="62" cy="46" r="5" fill="#FF5F57"/><circle cx="78" cy="46" r="5" fill="#FEBC2E"/><circle cx="94" cy="46" r="5" fill="#28C840"/>
-                        <text x="200" y="51" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="10" font-family="system-ui">GoldenWeb · Erstgespräch</text>
-                        <rect x="54" y="72" width="138" height="110" rx="8" fill="#2C2820"/>
-                        <ellipse cx="123" cy="108" rx="22" ry="22" fill="#3E3428"/>
-                        <ellipse cx="123" cy="100" rx="11" ry="12" fill="#C9A35E" opacity="0.7"/>
-                        <ellipse cx="123" cy="122" rx="18" ry="10" fill="#3E3428"/>
-                        <text x="68" y="178" fill="rgba(255,255,255,0.6)" font-size="9" font-family="system-ui">Jonas · GoldenWeb</text>
-                        <rect x="204" y="72" width="142" height="110" rx="8" fill="#2C2820"/>
-                        <ellipse cx="275" cy="108" rx="22" ry="22" fill="#3E3428"/>
-                        <ellipse cx="275" cy="100" rx="11" ry="12" fill="#9A9188" opacity="0.6"/>
-                        <ellipse cx="275" cy="122" rx="18" ry="10" fill="#3E3428"/>
-                        <text x="218" y="178" fill="rgba(255,255,255,0.6)" font-size="9" font-family="system-ui">Du · Interessent</text>
-                        <rect x="54" y="198" width="292" height="34" rx="8" fill="#252119"/>
-                        <circle cx="200" cy="215" r="14" fill="#E05252"/>
-                        <path d="M193 215 Q200 209 207 215" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                        <circle cx="340" cy="44" r="5" fill="#E05252"/>
-                        <text x="200" y="260" text-anchor="middle" fill="#9A8270" font-size="11" font-family="system-ui">15 Min · Unverbindlich · Kostenlos</text>
-                      </svg>
-                      <span class="ef-step-num">01</span>
-                      <div class="ef-step-chip">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                      </div>
-                    </div>
-                    <div class="ef-step-body">
-                      <h3 class="ef-step-title">Gespräch</h3>
-                      <p class="ef-step-desc">15 Min Kennenlernen. Kein Druck, kein Pitch.</p>
-                    </div>
-                  </article>
-                  <!-- Step 02 -->
-                  <article class="ef-step-card">
-                    <div class="ef-step-img">
-                      <svg class="ef-step-illu" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="300" fill="#F2EAD8"/>
-                        <rect x="30" y="24" width="340" height="242" rx="12" fill="white"/>
-                        <rect x="30" y="24" width="340" height="36" rx="12" fill="#F5F0E8"/>
-                        <rect x="30" y="42" width="340" height="18" fill="#F5F0E8"/>
-                        <circle cx="52" cy="42" r="5" fill="#FFB3AE"/><circle cx="68" cy="42" r="5" fill="#FFD48A"/><circle cx="84" cy="42" r="5" fill="#8DDE8A"/>
-                        <rect x="100" y="34" width="200" height="16" rx="8" fill="#EDE6D6"/>
-                        <text x="120" y="45.5" fill="#9A8270" font-size="8" font-family="system-ui">goldenweb.de</text>
-                        <rect x="30" y="60" width="340" height="70" fill="#1A1814"/>
-                        <rect x="90" y="72" width="140" height="10" rx="3" fill="rgba(255,255,255,0.85)"/>
-                        <rect x="100" y="86" width="120" height="7" rx="2" fill="rgba(255,255,255,0.4)"/>
-                        <rect x="100" y="98" width="70" height="18" rx="9" fill="#C9A35E"/>
-                        <text x="135" y="110.5" text-anchor="middle" fill="white" font-size="7.5" font-weight="600" font-family="system-ui">Erstgespräch</text>
-                        <rect x="40" y="184" width="96" height="70" rx="8" fill="white" stroke="#EDE6D6" stroke-width="1"/>
-                        <rect x="152" y="184" width="96" height="70" rx="8" fill="#1A1814"/>
-                        <rect x="264" y="184" width="96" height="70" rx="8" fill="white" stroke="#EDE6D6" stroke-width="1"/>
-                        <text x="200" y="270" text-anchor="middle" fill="#9A8270" font-size="11" font-family="system-ui">Kostenloser Erstentwurf · In 48h</text>
-                      </svg>
-                      <span class="ef-step-num">02</span>
-                      <div class="ef-step-chip">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                      </div>
-                    </div>
-                    <div class="ef-step-body">
-                      <h3 class="ef-step-title">Strategie &amp; Demo</h3>
-                      <p class="ef-step-desc">Kostenloser Erstentwurf deiner Website.</p>
-                    </div>
-                  </article>
-                  <!-- Step 03 -->
-                  <article class="ef-step-card">
-                    <div class="ef-step-img">
-                      <svg class="ef-step-illu" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="300" fill="#F2EAD8"/>
-                        <rect x="20" y="20" width="360" height="248" rx="12" fill="#1A1814"/>
-                        <rect x="20" y="20" width="360" height="30" rx="12" fill="#252119"/>
-                        <rect x="20" y="38" width="360" height="12" fill="#252119"/>
-                        <circle cx="38" cy="35" r="4.5" fill="#FF5F57"/><circle cx="52" cy="35" r="4.5" fill="#FEBC2E"/><circle cx="66" cy="35" r="4.5" fill="#28C840"/>
-                        <rect x="78" y="24" width="90" height="22" rx="5" fill="#1A1814"/>
-                        <text x="88" y="38.5" fill="rgba(255,255,255,0.7)" font-size="9" font-family="monospace">index.html</text>
-                        <rect x="20" y="50" width="72" height="218" fill="#1E1B17"/>
-                        <text x="30" y="70" fill="#C9A35E" font-size="8" font-family="monospace">goldenweb/</text>
-                        <text x="36" y="84" fill="rgba(255,255,255,0.5)" font-size="7.5" font-family="monospace">index.html</text>
-                        <text x="36" y="96" fill="rgba(255,255,255,0.3)" font-size="7.5" font-family="monospace">style.css</text>
-                        <text x="36" y="108" fill="rgba(255,255,255,0.3)" font-size="7.5" font-family="monospace">main.js</text>
-                        <rect x="92" y="96" width="288" height="13" fill="rgba(201,163,94,0.12)" rx="1"/>
-                        <text x="116" y="67" fill="#C9A35E" font-size="8" font-family="monospace">&lt;!DOCTYPE html&gt;</text>
-                        <text x="116" y="79" fill="#6A9FB5" font-size="8" font-family="monospace">&lt;html lang="de"&gt;</text>
-                        <text x="124" y="103" fill="white" font-size="8" font-family="monospace">  &lt;title&gt;GoldenWeb&lt;/title&gt;</text>
-                        <text x="132" y="139" fill="#6A9FB5" font-size="8" font-family="monospace">  &lt;section class="hero"&gt;</text>
-                        <text x="140" y="151" fill="#C9A35E" font-size="8" font-family="monospace">    24/7 Deine Website</text>
-                        <rect x="233" y="204" width="1.5" height="10" fill="#C9A35E" opacity="0.9"/>
-                        <rect x="20" y="238" width="360" height="30" fill="#141210"/>
-                        <circle cx="340" cy="253" r="4" fill="#4CAF7D"/>
-                        <text x="350" y="257" fill="#4CAF7D" font-size="8" font-family="monospace">Live</text>
-                      </svg>
-                      <span class="ef-step-num">03</span>
-                      <div class="ef-step-chip">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                      </div>
-                    </div>
-                    <div class="ef-step-body">
-                      <h3 class="ef-step-title">Umsetzung</h3>
-                      <p class="ef-step-desc">Design &amp; Entwicklung in deinem Look.</p>
-                    </div>
-                  </article>
-                  <!-- Step 04 -->
-                  <article class="ef-step-card">
-                    <div class="ef-step-img">
-                      <svg class="ef-step-illu" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="300" fill="#F2EAD8"/>
-                        <rect x="138" y="22" width="124" height="220" rx="22" fill="#1A1814"/>
-                        <rect x="144" y="28" width="112" height="208" rx="18" fill="#252119"/>
-                        <rect x="178" y="28" width="44" height="10" rx="5" fill="#1A1814"/>
-                        <rect x="144" y="38" width="112" height="198" rx="18" fill="#1A1814"/>
-                        <rect x="148" y="88" width="104" height="38" rx="8" fill="#C9A35E"/>
-                        <text x="200" y="103" text-anchor="middle" fill="white" font-size="8" font-weight="700" font-family="system-ui">Neue Anfrage!</text>
-                        <text x="200" y="116" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="7" font-family="system-ui">Max M. · Elektrobetrieb</text>
-                        <rect x="148" y="134" width="104" height="24" rx="6" fill="#2C2820"/>
-                        <circle cx="160" cy="146" r="6" fill="#4CAF7D" opacity="0.8"/>
-                        <text x="170" y="148" fill="rgba(255,255,255,0.7)" font-size="7" font-family="system-ui">Sabine K. · Praxis</text>
-                        <rect x="148" y="162" width="104" height="24" rx="6" fill="#2C2820"/>
-                        <circle cx="160" cy="174" r="6" fill="#C9A35E" opacity="0.7"/>
-                        <text x="170" y="176" fill="rgba(255,255,255,0.7)" font-size="7" font-family="system-ui">Klaus H. · Dachdecker</text>
-                        <rect x="30" y="80" width="96" height="140" rx="12" fill="white" opacity="0.9"/>
-                        <text x="78" y="105" text-anchor="middle" fill="#9A8270" font-size="8" font-weight="600" font-family="system-ui">ANFRAGEN</text>
-                        <rect x="40" y="160" width="12" height="30" rx="3" fill="#EDE6D6"/>
-                        <rect x="56" y="148" width="12" height="42" rx="3" fill="#EDE6D6"/>
-                        <rect x="72" y="140" width="12" height="50" rx="3" fill="#C9A35E" opacity="0.5"/>
-                        <rect x="88" y="125" width="12" height="65" rx="3" fill="#C9A35E" opacity="0.75"/>
-                        <rect x="104" y="112" width="12" height="78" rx="3" fill="#C9A35E"/>
-                        <text x="78" y="205" text-anchor="middle" fill="#C9A35E" font-size="14" font-weight="800" font-family="system-ui">+340%</text>
-                        <text x="200" y="270" text-anchor="middle" fill="#9A8270" font-size="11" font-family="system-ui">Automatisch · 24/7 · Kein Lead verloren</text>
-                      </svg>
-                      <span class="ef-step-num">04</span>
-                      <div class="ef-step-chip">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
-                      </div>
-                    </div>
-                    <div class="ef-step-body">
-                      <h3 class="ef-step-title">Live &amp; Anfragen</h3>
-                      <p class="ef-step-desc">Erste Anfragen kommen rein. Automatisch.</p>
-                    </div>
-                  </article>
-                </div>
-              </div>
-
-              <!-- Rail -->
-              <div class="end-rail">
-                <div class="ef-rail-line"></div>
-                <div class="ef-rail-dot filled" style="left:12.5%"></div>
-                <div class="ef-rail-dot filled" style="left:37.5%"></div>
-                <div class="ef-rail-dot filled" style="left:62.5%"></div>
-                <div class="ef-rail-dot" style="left:87.5%"></div>
-              </div>
-
-            </div><!-- /.ef-frame -->
-          </div><!-- /#efFrameWrap -->
-
-          <!-- Tagline – im Dark-Bereich unter dem Mockup -->
-          <div class="ef-tagline" id="efTagline" aria-label="GoldenWeb">
-            <span class="ef-tagline__brand">GoldenWeb</span>
-            <span class="ef-tagline__sep" aria-hidden="true">—</span>
-            <p class="ef-tagline__desc">Websites die 24/7 für Handwerker und lokale Dienstleister arbeiten. Automatisch.</p>
-            <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="ef-tagline__cta">
-              Erstgespräch buchen
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="13" height="13"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
-
-        </div><!-- /#layerEnd -->
-
-      </div><!-- /.anim-stage -->
+        <h1 class="hero__headline">
+          Deine Website arbeitet <span class="text-gold">24/7,</span><br>
+          damit du es nicht mehr musst.
+        </h1>
+        <p class="hero__sub fade-up stagger-1">
+          Wir bauen ein System aus Website, KI und Automatisierung, das planbar neue Anfragen bringt. Für Handwerker und lokale Dienstleister. Deutschlandweit.
+        </p>
+        <div class="hero__ctas fade-up stagger-2">
+          <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+            Kostenloses Erstgespräch →
+          </a>
+          <a href="#referenzen" class="btn btn--ghost btn--lg">
+            Referenzen ansehen
+          </a>
+        </div>
+        <div class="hero__trust fade-up stagger-3">
+          <span class="trust-item"><span class="trust-check">✓</span> Kein Vorwissen nötig</span>
+          <span class="trust-item"><span class="trust-check">✓</span> Fertig in 30 Tagen</span>
+          <span class="trust-item"><span class="trust-check">✓</span> Geld-zurück-Garantie</span>
+        </div>
+      </div>
 
       <!-- Marquee – unter dem pinned Block -->
       <div class="marquee" aria-hidden="true">
@@ -429,41 +144,77 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         PROBLEM
+         ERGEBNISSE
          ══════════════════════════════════════ -->
-    <section class="section-problem section" id="problem" aria-label="Das Problem">
+    <section class="section-results section" id="ergebnisse" aria-label="Was wir für euch erreichen">
       <div class="container">
-        <span class="eyebrow fade-up">Warum das wichtig ist</span>
-
-        <h2 class="problem__headline fade-up stagger-1">
-          Jeden Tag gehen Aufträge verloren.<br>
-          <span class="text-gold">Ohne dass du es weißt.</span>
-        </h2>
-
-        <div class="problem__cards">
-          <div class="problem__card fade-up stagger-1">
-            <div class="problem__card-num">01</div>
-            <h3 class="problem__card-title">Unsichtbar bei der Suche</h3>
-            <p class="problem__card-desc">Täglich suchen Menschen in deiner Stadt nach deinen Leistungen. Wer nicht auf Seite 1 steht, existiert nicht. Deine Konkurrenz tut es. Du noch nicht.</p>
-          </div>
-
-          <div class="problem__card fade-up stagger-2">
-            <div class="problem__card-num">02</div>
-            <h3 class="problem__card-title">Zu spät zurückgemeldet</h3>
-            <p class="problem__card-desc">Eine Anfrage kommt rein. Du siehst sie Stunden später. Bis dahin hat der Interessent schon drei andere angeschrieben. Wer zuerst antwortet, bekommt den Auftrag.</p>
-          </div>
-
-          <div class="problem__card fade-up stagger-3">
-            <div class="problem__card-num">03</div>
-            <h3 class="problem__card-title">Kein System dahinter</h3>
-            <p class="problem__card-desc">Anfragen kommen per Telefon, WhatsApp, E-Mail, Formular. Nichts ist gebündelt. Nichts ist nachverfolgbar. Leads fallen durch. Du merkst es erst, wenn es zu spät ist.</p>
-          </div>
+        <div class="section-header fade-up">
+          <span class="eyebrow">Messbare Ergebnisse</span>
+          <h2>Was wir für euch<br><span class="text-gold">erreichen.</span></h2>
+          <p>Kein Versprechen ohne Beweis. Das sind die Ergebnisse, die wir für lokale Betriebe erzielen.</p>
         </div>
 
-        <p class="problem__close fade-up">
-          Das ist kein Einzelfall. Das ist der Alltag der meisten Betriebe.<br>
-          <span class="text-gold">Und genau hier setzen wir an.</span>
-        </p>
+        <div class="results-grid">
+
+          <div class="result-card fade-up stagger-1">
+            <div class="result-card__visual">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="80" height="80" rx="16" fill="rgba(200,169,110,0.08)"/>
+                <rect x="18" y="52" width="10" height="14" rx="3" fill="rgba(200,169,110,0.3)"/>
+                <rect x="34" y="40" width="10" height="26" rx="3" fill="rgba(200,169,110,0.5)"/>
+                <rect x="50" y="26" width="10" height="40" rx="3" fill="#C8A96E"/>
+                <path d="M18 48 L34 36 L50 22" stroke="#C8A96E" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+                <path d="M56 22 L62 16 M56 16 L62 22" stroke="#C8A96E" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="result-card__num">01</div>
+            <h3 class="result-card__title">Mehr Sichtbarkeit bei Google</h3>
+            <p class="result-card__desc">Deine Kunden suchen täglich nach deinen Leistungen. Wir sorgen dafür, dass sie dich finden — nicht die Konkurrenz.</p>
+            <div class="result-card__stat"><span class="result-card__stat-num">+340%</span><span>mehr organischer Traffic</span></div>
+          </div>
+
+          <div class="result-card fade-up stagger-2">
+            <div class="result-card__visual">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="80" height="80" rx="16" fill="rgba(200,169,110,0.08)"/>
+                <rect x="16" y="22" width="48" height="36" rx="8" fill="rgba(200,169,110,0.12)" stroke="rgba(200,169,110,0.3)" stroke-width="1.5"/>
+                <path d="M16 30 L40 44 L64 30" stroke="#C8A96E" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="56" cy="54" r="12" fill="#0C0B09" stroke="rgba(200,169,110,0.4)" stroke-width="1.5"/>
+                <path d="M50 54 L54 58 L62 50" stroke="#C8A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="result-card__num">02</div>
+            <h3 class="result-card__title">Sofortreaktion auf jede Anfrage</h3>
+            <p class="result-card__desc">Neue Anfragen werden automatisch weitergeleitet. Du reagierst als Erster — bevor die Konkurrenz überhaupt den Namen kennt.</p>
+            <div class="result-card__stat"><span class="result-card__stat-num">&lt; 5 Min</span><span>Reaktionszeit im Schnitt</span></div>
+          </div>
+
+          <div class="result-card fade-up stagger-3">
+            <div class="result-card__visual">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="80" height="80" rx="16" fill="rgba(200,169,110,0.08)"/>
+                <circle cx="40" cy="34" r="14" stroke="rgba(200,169,110,0.4)" stroke-width="1.5" fill="rgba(200,169,110,0.08)"/>
+                <path d="M34 34 L38 38 L46 30" stroke="#C8A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 58 C22 50 28 46 40 46 C52 46 58 50 58 58" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="27" cy="28" r="6" fill="rgba(200,169,110,0.15)" stroke="rgba(200,169,110,0.25)" stroke-width="1"/>
+                <circle cx="53" cy="28" r="6" fill="rgba(200,169,110,0.15)" stroke="rgba(200,169,110,0.25)" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="result-card__num">03</div>
+            <h3 class="result-card__title">Kein Lead geht verloren</h3>
+            <p class="result-card__desc">Alle Anfragen — egal ob Web, WhatsApp oder E-Mail — laufen zentral zusammen. Strukturiert, nachverfolgbar, automatisch.</p>
+            <div class="result-card__stat"><span class="result-card__stat-num">+18</span><span>neue Anfragen pro Monat im Schnitt</span></div>
+          </div>
+
+        </div>
+
+        <div class="results-cta fade-up">
+          <a href="https://calendly.com/jonas-goldenpost/kennenlernen?month=2026-05" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+            Kostenlos zeigen lassen, was möglich ist
+          </a>
+          <p class="results-cta__sub">15 Minuten. Kostenlos. Unverbindlich.</p>
+        </div>
+
       </div>
     </section>
 
@@ -473,9 +224,9 @@
     <section class="section-services section" id="leistungen" aria-label="Leistungen">
       <div class="container">
         <div class="section-header fade-up">
-          <span class="eyebrow">Was wir bauen</span>
-          <h2>Deine Website als<br>Anfragen-Maschine.</h2>
-          <p>Wir bauen keine Visitenkarte. Wir bauen ein digitales System, das planbar neue Kunden bringt.</p>
+          <span class="eyebrow">Unser Angebot</span>
+          <h2>Was wir dir<br><span class="text-gold">liefern.</span></h2>
+          <p>Kein Template, kein Baukasten. Ein System, das für dein Unternehmen und deine Region gebaut ist.</p>
         </div>
 
         <!-- Kern-Service -->
@@ -536,7 +287,7 @@
               <p class="service-card__desc">Alle Anfragen zentral, organisiert und nachverfolgbar. Kein Lead geht verloren.</p>
             </div>
 
-            <div class="service-card service-card--new fade-up stagger-4">
+            <div class="service-card service-card--new service-card--wide fade-up stagger-4">
               <div class="service-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"/>
@@ -544,9 +295,9 @@
                   <path d="M2 12h20"/>
                 </svg>
               </div>
-              <div class="service-card__badge">Neu & wichtiger denn je</div>
+              <div class="service-card__badge">Neu &amp; wichtiger denn je</div>
               <h3 class="service-card__title">KI-Sichtbarkeit</h3>
-              <p class="service-card__desc">ChatGPT, Perplexity und Co. beantworten Suchanfragen direkt. Ohne Google. Wer dort nicht vorkommt, verliert. Wir optimieren deine Website auch für KI-Suchmaschinen.</p>
+              <p class="service-card__desc">ChatGPT, Perplexity und Co. beantworten Suchanfragen direkt — ohne Google. Wer dort nicht vorkommt, verliert Kunden, die er nie sieht. Wir optimieren deine Website auch für KI-Suchmaschinen.</p>
             </div>
 
           </div>
@@ -1108,9 +859,6 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="assets/js/hero-animation.js"></script>
   <script src="assets/js/animations.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/accordion.js" defer></script>
