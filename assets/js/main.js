@@ -123,11 +123,41 @@
     sections.forEach((s) => observer.observe(s));
   }
 
+  /* ── Case Study Vorher/Nachher Tabs ── */
+  function initCsCompareTabs () {
+    var wrap = document.getElementById('csCompare');
+    if (!wrap) return;
+
+    var tabs   = wrap.querySelectorAll('.cs-compare__tab');
+    var panels = wrap.querySelectorAll('.cs-compare__panel');
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var target = tab.dataset.panel;
+
+        tabs.forEach(function (t) {
+          t.classList.remove('cs-compare__tab--active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        panels.forEach(function (p) {
+          p.classList.remove('cs-compare__panel--active');
+          p.hidden = true;
+        });
+
+        tab.classList.add('cs-compare__tab--active');
+        tab.setAttribute('aria-selected', 'true');
+        var active = document.getElementById('panel-' + target);
+        if (active) { active.classList.add('cs-compare__panel--active'); active.hidden = false; }
+      });
+    });
+  }
+
   /* ── Init ── */
   document.addEventListener('DOMContentLoaded', () => {
     initNav();
     initHamburger();
     initMarquee();
     initActiveLinks();
+    initCsCompareTabs();
   });
 })();
